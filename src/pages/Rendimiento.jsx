@@ -25,15 +25,14 @@ import {
 // ** import wizard
 import WizardRendimiento from "./WizardRendimiento";
 
+import Fertilizantes from "./Fertilizantes";
+
 // ** page of results
 import ApexCharts from "../components/Graficos/charts/apex";
 
 const Rendimiento = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-
-  const [modal, setModal] = useState(false);
-  const toggleTwo = () => setModal(!modal);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   return (
     <>
@@ -48,7 +47,7 @@ const Rendimiento = () => {
           </CardTitle>
         </CardHeader>
         <CardBody>
-          <div className="d-flex align-items-center justify-content-between flex-sm-column flex-md-row p-sm-2 p-md-5">
+          <div className="d-flex align-items-center justify-content-between flex-column flex-sm-column flex-md-row p-sm-2 p-md-5">
             <div>
               <Row>
                 <div className="d-flex align-items-center gap-1">
@@ -89,29 +88,40 @@ const Rendimiento = () => {
               </Row>
             </div>
 
-            <div className="d-flex flex-sm-row flex-md-column align-items-center justify-content-center gap-sm-1 gap-md-3 mt-sm-3">
+            <div className="d-flex flex-column flex-sm-row flex-md-column align-items-center justify-content-center gap-2 gap-sm-1 gap-md-3 mt-2 mt-sm-3">
               <Button color="primary" block>
                 Fertilizantes
               </Button>
-              {/* <Button color="primary" block>
-                Disponibilidad de agua
-              </Button> */}
-              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+
+              {/* <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <DropdownToggle color="primary" caret size="md">
                   Disponibilidad de agua
                 </DropdownToggle>
                 <DropdownMenu>
-                  {/* <DropdownItem header>Header</DropdownItem> */}
                   <DropdownItem className="w-100">Año húmedo</DropdownItem>
                   <DropdownItem className="w-100">Año neutro</DropdownItem>
                   <DropdownItem className="w-100">Año seco</DropdownItem>
                   <DropdownItem className="w-100">Riego</DropdownItem>
                 </DropdownMenu>
-              </Dropdown>
-
-              <Button color="primary" block onClick={toggleTwo}>
-                Fecha de siembra
-              </Button>
+              </Dropdown> */}
+              <div className="w-100">
+                <Label htmlFor="disponibilidadDeAgua">
+                  Disponibilidad de agua
+                </Label>
+                <Input
+                  type="select"
+                  name="disponibilidadDeAgua"
+                  id="disponibilidadDeAgua"
+                >
+                  <option value="seleccioneSuDisponibilidad">
+                    Seleccione su disponibilidad
+                  </option>
+                  <option value="Año húmedo">Año húmedo</option>
+                  <option value="Año neutro">Año neutro</option>
+                  <option value="Año seco">Año seco</option>
+                  <option value="Riego">Riego</option>
+                </Input>
+              </div>
 
               <div className="w-100">
                 <Label>Fecha de siembra</Label>
@@ -127,24 +137,6 @@ const Rendimiento = () => {
           <WizardRendimiento />
         </Col>
       </Row>
-
-      <Modal isOpen={modal} toggle={toggleTwo}>
-        <ModalHeader toggle={toggleTwo}>
-          Modifica tu fecha de siembra.
-        </ModalHeader>
-        <ModalBody>
-          <Label>Fecha de siembra</Label>
-          <Input type="date" />
-        </ModalBody>
-        <ModalFooter>
-          <Button color="danger" onClick={toggleTwo}>
-            Cancelar
-          </Button>{" "}
-          <Button color="primary" onClick={toggleTwo}>
-            Guardar
-          </Button>
-        </ModalFooter>
-      </Modal>
     </>
   );
 };
