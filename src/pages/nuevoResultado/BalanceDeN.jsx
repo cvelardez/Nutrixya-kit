@@ -12,12 +12,13 @@ const BalanceDeN = () => {
       <div className="py-2">
         <Row>
           <Col>
-            <img src={balanceN} alt="Grafico balance n" />
+            <img src={balanceN} alt="Grafico balance n" className="img-fluid" />
           </Col>
           <Col>
             <img
               src={dosisDeMantenimiento}
               alt="Grafico dosisDeMantenimiento"
+              className="img-fluid"
             />
           </Col>
         </Row>
@@ -27,6 +28,7 @@ const BalanceDeN = () => {
             <img
               src={rendimientoSinAbonar}
               alt="Grafico rendimientoSinAbonar"
+              className="img-fluid"
             />
           </Col>
         </Row>
