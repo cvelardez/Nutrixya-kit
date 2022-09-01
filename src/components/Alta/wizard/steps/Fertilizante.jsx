@@ -45,12 +45,12 @@ const Fertilizante = ({ stepper }) => {
     setEficienciasAzufre,
   } = useContext(DataContext);
 
-  const [arrancadorAbonoOrganico, setArrancadorAbonoOrganico] =
-    useState("Ninguno");
-
-  const [selectedDefaultArrancador, setSelectedDefaultArrancador] = useState(
-    "Fosfato monoamónico MAP"
+  const [arrancadorAbonoOrganico, setArrancadorAbonoOrganico] = useState(
+    "Seleccione un arrancador o abono orgánico"
   );
+
+  const [selectedDefaultArrancador, setSelectedDefaultArrancador] =
+    useState(null);
 
   // ** State errors
   const [formErrors, setFormErrors] = useState({});
@@ -81,6 +81,11 @@ const Fertilizante = ({ stepper }) => {
 
     if (!values.starterOrOrganicFertilizer) {
       errors.starterOrOrganicFertilizer = "Obligatorio";
+    } else if (
+      values.starterOrOrganicFertilizer ===
+      "Seleccione un arrancador o abono orgánico"
+    ) {
+      errors.starterOrOrganicFertilizer = "Obligatorio";
     }
 
     if (arrancadorAbonoOrganico !== "Ninguno") {
@@ -98,11 +103,15 @@ const Fertilizante = ({ stepper }) => {
     if (arrancadorAbonoOrganico === "Arrancador") {
       if (!values.starter) {
         errors.starter = "Obligatorio";
+      } else if (values.starter === "Seleccione un arrancador") {
+        errors.starter = "Obligatorio";
       }
     }
 
     if (arrancadorAbonoOrganico === "Abono orgánico") {
       if (!values.organicFertilizer) {
+        errors.organicFertilizer = "Obligatorio";
+      } else if (values.organicFertilizer === "Seleccione un abono orgánico") {
         errors.organicFertilizer = "Obligatorio";
       }
     }
@@ -194,9 +203,10 @@ const Fertilizante = ({ stepper }) => {
                 setArrancadorAbonoOrganico(selectedValue);
               }}
             >
-              <option selected value={"Ninguno"}>
-                Ninguno
+              <option value={"Seleccione un arrancador o abono orgánico"}>
+                - Seleccione arrancador o abono orgánico -
               </option>
+              <option value={"Ninguno"}>Ninguno</option>
               <option value={"Arrancador"}>Arrancador</option>
               <option value={"Abono orgánico"}>Abono orgánico</option>
             </Input>
@@ -214,7 +224,9 @@ const Fertilizante = ({ stepper }) => {
             </UncontrolledTooltip>
           </Col>
 
-          {arrancadorAbonoOrganico !== "Ninguno" ? (
+          {arrancadorAbonoOrganico !== "Ninguno" &&
+          arrancadorAbonoOrganico !==
+            "Seleccione un arrancador o abono orgánico" ? (
             <>
               <Col md="6" sm="12" className="mb-1">
                 <Label
@@ -276,6 +288,10 @@ const Fertilizante = ({ stepper }) => {
                         setSelectedDefaultArrancador(selectedValue);
                       }}
                     >
+                      <option value={"Seleccione un arrancador"}>
+                        - Seleccione un arrancador -
+                      </option>
+
                       <option value={"Fosfato monoamónico MAP"}>
                         Fosfato monoamónico MAP
                       </option>
@@ -343,6 +359,9 @@ const Fertilizante = ({ stepper }) => {
                         setSelectedDefaultArrancador(selectedValue);
                       }}
                     >
+                      <option value={"Seleccione un abono orgánico"}>
+                        - Seleccione un abono orgánico -
+                      </option>
                       <option value={"Estiércol vacuno sólido"}>
                         Estiércol vacuno sólido
                       </option>
@@ -445,7 +464,7 @@ const Fertilizante = ({ stepper }) => {
 
                     <UncontrolledTooltip placement="right" target="ContenidoKg">
                       <span className="fw-bolder">Contenido Kg/Kg: </span>{" "}
-                      Composición del fertilizante expresada en en kg/kg de cada
+                      Composición del fertilizante expresada en kg/kg de cada
                       elemento. Ejemplo: Fosfato monoamónico: <br />
                       <br />
                       Composición (%) : N 11- P2O5 48- K2O 0<br />
@@ -495,8 +514,8 @@ const Fertilizante = ({ stepper }) => {
                         target="ContenidoKg"
                       >
                         <span className="fw-bolder">Contenido Kg/Kg: </span>{" "}
-                        Composición del fertilizante expresada en en kg/kg de
-                        cada elemento. Ejemplo: Fosfato monoamónico: <br />
+                        Composición del fertilizante expresada en kg/kg de cada
+                        elemento. Ejemplo: Fosfato monoamónico: <br />
                         <br />
                         Composición (%) : N 11- P2O5 48- K2O 0<br />
                         Composición (kg/kg): N 0.11- P 0.21- K 0
@@ -552,8 +571,8 @@ const Fertilizante = ({ stepper }) => {
                         target="ContenidoKg"
                       >
                         <span className="fw-bolder">Contenido Kg/Kg: </span>{" "}
-                        Composición del fertilizante expresada en en kg/kg de
-                        cada elemento. Ejemplo: Fosfato monoamónico: <br />
+                        Composición del fertilizante expresada en kg/kg de cada
+                        elemento. Ejemplo: Fosfato monoamónico: <br />
                         <br />
                         Composición (%) : N 11- P2O5 48- K2O 0<br />
                         Composición (kg/kg): N 0.11- P 0.21- K 0
@@ -609,8 +628,8 @@ const Fertilizante = ({ stepper }) => {
                         target="ContenidoKg"
                       >
                         <span className="fw-bolder">Contenido Kg/Kg: </span>{" "}
-                        Composición del fertilizante expresada en en kg/kg de
-                        cada elemento. Ejemplo: Fosfato monoamónico: <br />
+                        Composición del fertilizante expresada en kg/kg de cada
+                        elemento. Ejemplo: Fosfato monoamónico: <br />
                         <br />
                         Composición (%) : N 11- P2O5 48- K2O 0<br />
                         Composición (kg/kg): N 0.11- P 0.21- K 0
@@ -666,8 +685,8 @@ const Fertilizante = ({ stepper }) => {
                         target="ContenidoKg"
                       >
                         <span className="fw-bolder">Contenido Kg/Kg: </span>{" "}
-                        Composición del fertilizante expresada en en kg/kg de
-                        cada elemento. Ejemplo: Fosfato monoamónico: <br />
+                        Composición del fertilizante expresada en kg/kg de cada
+                        elemento. Ejemplo: Fosfato monoamónico: <br />
                         <br />
                         Composición (%) : N 11- P2O5 48- K2O 0<br />
                         Composición (kg/kg): N 0.11- P 0.21- K 0
@@ -787,8 +806,8 @@ const Fertilizante = ({ stepper }) => {
                         target="ContenidoKg"
                       >
                         <span className="fw-bolder">Contenido Kg/Kg: </span>{" "}
-                        Composición del fertilizante expresada en en kg/kg de
-                        cada elemento. Ejemplo: Fosfato monoamónico: <br />
+                        Composición del fertilizante expresada en kg/kg de cada
+                        elemento. Ejemplo: Fosfato monoamónico: <br />
                         <br />
                         Composición (%) : N 11- P2O5 48- K2O 0<br />
                         Composición (kg/kg): N 0.11- P 0.21- K 0
@@ -918,7 +937,7 @@ const Fertilizante = ({ stepper }) => {
                 Costo de aplicación del fertilizante y del análisis de suelo
                 (u$s/ha):{" "}
               </span>{" "}
-              Costo de la técnica que se vera reflejado en el análisis de
+              Costo de la técnica que se verá reflejado en el análisis de
               sensibilidad de los resultados. <br />{" "}
             </UncontrolledTooltip>
 

@@ -20,6 +20,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  UncontrolledTooltip,
 } from "reactstrap";
 
 // ** import wizard
@@ -29,10 +30,11 @@ import Fertilizantes from "./Fertilizantes";
 
 // ** page of results
 import ApexCharts from "../components/Graficos/charts/apex";
+import { FiHelpCircle } from "react-icons/fi";
 
 const Rendimiento = () => {
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
-  // const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const [modalFertilizantes, setModalFertilizantes] = useState(false);
+  const toggleFertilizantes = () => setModalFertilizantes(!modalFertilizantes);
 
   return (
     <>
@@ -89,9 +91,31 @@ const Rendimiento = () => {
             </div>
 
             <div className="d-flex flex-column flex-sm-row flex-md-column align-items-center justify-content-center gap-2 gap-sm-1 gap-md-3 mt-2 mt-sm-3">
-              <Button color="primary" block>
+              <Button color="primary" block onClick={toggleFertilizantes}>
                 Fertilizantes
               </Button>
+
+              <Modal
+                isOpen={modalFertilizantes}
+                toggle={toggleFertilizantes}
+                size="xl"
+                centered={true}
+              >
+                {/* <ModalHeader toggle={toggleFertilizantes}>
+                  Modal title
+                </ModalHeader> */}
+                <ModalBody>
+                  <Fertilizantes />
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" onClick={toggleFertilizantes}>
+                    Cancelar
+                  </Button>{" "}
+                  <Button color="primary" onClick={toggleFertilizantes}>
+                    Guardar
+                  </Button>
+                </ModalFooter>
+              </Modal>
 
               {/* <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <DropdownToggle color="primary" caret size="md">

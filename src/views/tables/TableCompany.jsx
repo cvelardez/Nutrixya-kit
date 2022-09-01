@@ -28,6 +28,7 @@ import {
   ModalFooter,
   ModalBody,
   Tooltip,
+  UncontrolledTooltip,
 } from "reactstrap";
 
 // ** Import Link from react-router-dom
@@ -72,10 +73,15 @@ const TableCompany = () => {
                   className="align-middle fw-bolder"
                   data-bs-toggle="tooltip"
                   data-bs-placement="bottom"
-                  title="Crear nuevo Lote"
+                  // title="Crear nuevo Lote"
+                  id="masLote"
                 >
                   + Lote
                 </Link>
+                {/* <FiHelpCircle id="Precio" className="fs-5 ms-1" /> */}
+                <UncontrolledTooltip placement="right" target="masLote">
+                  <span className="fw-bolder">Crear nuevo Lote</span>
+                </UncontrolledTooltip>
               </div>
             </div>
           </td>
@@ -100,10 +106,15 @@ const TableCompany = () => {
                       className="align-middle fw-bolder"
                       data-bs-toggle="tooltip"
                       data-bs-placement="bottom"
-                      title="Editar Lote"
+                      // title="Editar Lote"
+                      id="editLote"
                     >
                       {dato.name}
                     </Link>
+
+                    <UncontrolledTooltip placement="right" target="editLote">
+                      <span className="fw-bolder">Editar Lote</span>
+                    </UncontrolledTooltip>
 
                     <span className="font-small-2 text-muted">
                       {dato.description}
@@ -215,7 +226,7 @@ const TableCompany = () => {
               </Modal>
 
               <td>
-                <span className="hoverDelete" title="Eliminar Lote">
+                <span className="hoverDelete" id="deleteLote">
                   <Trash
                     className="me-50"
                     size={15}
@@ -235,6 +246,9 @@ const TableCompany = () => {
                     Eliminar Lote
                   </Tooltip> */}
                 </span>
+                <UncontrolledTooltip placement="right" target="deleteLote">
+                  <span className="fw-bolder">Eliminar Lote</span>
+                </UncontrolledTooltip>
               </td>
             </tr>
           </>
