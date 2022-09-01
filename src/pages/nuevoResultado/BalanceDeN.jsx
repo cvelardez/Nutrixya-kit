@@ -1,9 +1,11 @@
 import React from "react";
 import { Col, Row } from "reactstrap";
 
-import balanceN from "./balanceN.jpg";
-import dosisDeMantenimiento from "./dosisDeMantenimiento.jpg";
-import rendimientoSinAbonar from "./rendimientoSinAbonar.jpg";
+// import balanceN from "./balanceN.jpg";
+// import dosisDeMantenimiento from "./dosisDeMantenimiento.jpg";
+// import rendimientoSinAbonar from "./rendimientoSinAbonar.jpg";
+
+import ApexCharts from "../../components/Graficos/charts/apex";
 
 const BalanceDeN = () => {
   return (
@@ -12,18 +14,19 @@ const BalanceDeN = () => {
       <div className="py-2">
         <Row>
           <Col>
-            <img src={balanceN} alt="Grafico balance n" className="img-fluid" />
+            <ApexCharts />
+            {/* <img src={balanceN} alt="Grafico balance n" className="img-fluid" /> */}
           </Col>
-          <Col>
+          {/* <Col>
             <img
               src={dosisDeMantenimiento}
               alt="Grafico dosisDeMantenimiento"
               className="img-fluid"
             />
-          </Col>
+          </Col> */}
         </Row>
 
-        <Row>
+        {/* <Row>
           <Col>
             <img
               src={rendimientoSinAbonar}
@@ -31,7 +34,7 @@ const BalanceDeN = () => {
               className="img-fluid"
             />
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </>
   );

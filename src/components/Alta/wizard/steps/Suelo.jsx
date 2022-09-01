@@ -88,9 +88,15 @@ const Suelo = ({ stepper }) => {
 
     if (!values.compactionLevel) {
       errors.compactionLevel = "Obligatorio";
+    } else if (values.compactionLevel === "Seleccione un nivel") {
+      errors.compactionLevel = "Obligatorio";
     }
 
     if (!values.limitationForWaterlogging) {
+      errors.limitationForWaterlogging = "Obligatorio";
+    } else if (
+      values.limitationForWaterlogging === "Seleccione una Limitación"
+    ) {
       errors.limitationForWaterlogging = "Obligatorio";
     }
 
@@ -116,13 +122,15 @@ const Suelo = ({ stepper }) => {
       errors.phosphate = "Obligatorio";
     }
 
-    if (!values.cic) {
-      errors.cic = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.cic) {
+    //   errors.cic = "Obligatorio";
+    // }
 
-    if (!values.nai) {
-      errors.nai = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.nai) {
+    //   errors.nai = "Obligatorio";
+    // }
 
     if (!values.soilDensity) {
       errors.soilDensity = "Obligatorio";
@@ -132,33 +140,38 @@ const Suelo = ({ stepper }) => {
       errors.totalN = "Obligatorio";
     }
 
-    if (!values.ce) {
-      errors.ce = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.ce) {
+    //   errors.ce = "Obligatorio";
+    // }
 
-    if (!values.cai) {
-      errors.cai = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.cai) {
+    //   errors.cai = "Obligatorio";
+    // }
 
-    if (!values.ki) {
-      errors.ki = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.ki) {
+    //   errors.ki = "Obligatorio";
+    // }
 
     if (!values.nno3) {
       errors.nno3 = "Obligatorio";
     }
 
-    if (!values.fmin) {
-      errors.fmin = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.fmin) {
+    //   errors.fmin = "Obligatorio";
+    // }
 
     if (!values.ph) {
       errors.ph = "Obligatorio";
     }
 
-    if (!values.mgi) {
-      errors.mgi = "Obligatorio";
-    }
+    // ** No es obligatorio
+    // if (!values.mgi) {
+    //   errors.mgi = "Obligatorio";
+    // }
 
     // Estrato 2
 
@@ -170,6 +183,7 @@ const Suelo = ({ stepper }) => {
           "Seleccione una profundidad de 20 a 40 o 20 a 60cm";
       }
     }
+
     if (estratoDos) {
       if (!values.sso4StratumTwo) {
         errors.sso4StratumTwo = "Obligatorio";
@@ -361,11 +375,12 @@ const Suelo = ({ stepper }) => {
                   }
                   onChange={handleChange}
                 >
+                  <option value={"Seleccione un nivel"}>
+                    - Seleccione un nivel -
+                  </option>
                   <option value={"Mullido"}>Mullido</option>
                   <option value={"Normal"}>Normal</option>
-                  <option selected value={"Compacto"}>
-                    Compacto
-                  </option>
+                  <option value={"Compacto"}>Compacto</option>
                   <option value={"Muy compacto"}>Muy compacto</option>
                 </Input>
                 {formErrors.compactionLevel && (
@@ -390,10 +405,13 @@ const Suelo = ({ stepper }) => {
                   }
                   onChange={handleChange}
                 >
+                  <option value={"Seleccione una Limitación"}>
+                    - Seleccione una Limitación -
+                  </option>
                   <option value={"Suelo imperfectamente drenado o peor"}>
                     Suelo imperfectamente drenado o peor
                   </option>
-                  <option selected value={"Suelo moderadamente bien drenado"}>
+                  <option value={"Suelo moderadamente bien drenado"}>
                     Suelo moderadamente bien drenado
                   </option>
                   <option value={"Suelo bien drenado o mejor"}>
@@ -439,7 +457,8 @@ const Suelo = ({ stepper }) => {
             <Accordion open={open} toggle={toggle}>
               <AccordionItem>
                 <AccordionHeader targetId="1" className="fs-3">
-                  Estrato 1
+                  {/* 1 */}
+                  Estrato
                 </AccordionHeader>
                 <AccordionBody accordionId="1">
                   <Row>
@@ -483,7 +502,7 @@ const Suelo = ({ stepper }) => {
                         type="number"
                         name="sso4"
                         id="s-so4"
-                        placeholder="8"
+                        placeholder="12"
                         className={
                           formErrors.sso4 ? `error_input_register` : null
                         }
@@ -545,9 +564,9 @@ const Suelo = ({ stepper }) => {
                         name="cic"
                         id="cic"
                         placeholder="14"
-                        className={
-                          formErrors.cic ? `error_input_register` : null
-                        }
+                        // className={
+                        //   formErrors.cic ? `error_input_register` : null
+                        // }
                         value={dataForm.cic}
                         onChange={handleChange}
                       />
@@ -559,11 +578,11 @@ const Suelo = ({ stepper }) => {
                         cmolc/kg
                       </UncontrolledTooltip>
 
-                      {formErrors.cic && (
+                      {/* {formErrors.cic && (
                         <em className="error_input_message_register">
                           {formErrors.cic}
                         </em>
-                      )}
+                      )} */}
 
                       {/* Nai */}
                       <Label
@@ -577,18 +596,18 @@ const Suelo = ({ stepper }) => {
                         name="nai"
                         id="nai"
                         placeholder="0.3"
-                        className={
-                          formErrors.nai ? `error_input_register` : null
-                        }
+                        // className={
+                        //   formErrors.nai ? `error_input_register` : null
+                        // }
                         value={dataForm.nai}
                         onChange={handleChange}
                       />
 
-                      {formErrors.nai && (
+                      {/* {formErrors.nai && (
                         <em className="error_input_message_register">
                           {formErrors.nai}
                         </em>
-                      )}
+                      )} */}
 
                       <UncontrolledTooltip placement="right" target="Nai">
                         <span className="fw-bolder">Nai</span> Sodio
@@ -713,18 +732,18 @@ const Suelo = ({ stepper }) => {
                         name="cai"
                         id="cai"
                         placeholder="9"
-                        className={
-                          formErrors.cai ? `error_input_register` : null
-                        }
+                        // className={
+                        //   formErrors.cai ? `error_input_register` : null
+                        // }
                         value={dataForm.cai}
                         onChange={handleChange}
                       />
 
-                      {formErrors.cai && (
+                      {/* {formErrors.cai && (
                         <em className="error_input_message_register">
                           {formErrors.cai}
                         </em>
-                      )}
+                      )} */}
 
                       <UncontrolledTooltip placement="right" target="Cai">
                         <span className="fw-bolder">Cai</span> Calcio
@@ -745,18 +764,18 @@ const Suelo = ({ stepper }) => {
                         name="ki"
                         id="ki"
                         placeholder="2"
-                        className={
-                          formErrors.ki ? `error_input_register` : null
-                        }
+                        // className={
+                        //   formErrors.ki ? `error_input_register` : null
+                        // }
                         value={dataForm.ki}
                         onChange={handleChange}
                       />
 
-                      {formErrors.ki && (
+                      {/* {formErrors.ki && (
                         <em className="error_input_message_register">
                           {formErrors.ki}
                         </em>
-                      )}
+                      )} */}
 
                       <UncontrolledTooltip placement="right" target="Ki">
                         <span className="fw-bolder">Ki</span> Potasio
@@ -810,18 +829,18 @@ const Suelo = ({ stepper }) => {
                         name="fmin"
                         id="fmin"
                         placeholder="0.11"
-                        className={
-                          formErrors.fmin ? `error_input_register` : null
-                        }
+                        // className={
+                        //   formErrors.fmin ? `error_input_register` : null
+                        // }
                         value={dataForm.fmin}
                         onChange={handleChange}
                       />
 
-                      {formErrors.fmin && (
+                      {/* {formErrors.fmin && (
                         <em className="error_input_message_register">
                           {formErrors.fmin}
                         </em>
-                      )}
+                      )} */}
 
                       <UncontrolledTooltip placement="right" target="Fmin">
                         <span className="fw-bolder">Fmin</span> Factor de
@@ -905,7 +924,7 @@ const Suelo = ({ stepper }) => {
                 </AccordionBody>
               </AccordionItem>
 
-              {!estratoDos ? (
+              {/* {!estratoDos ? (
                 <Button
                   color="primary"
                   outline
@@ -916,7 +935,7 @@ const Suelo = ({ stepper }) => {
                 >
                   Agregar estrato +
                 </Button>
-              ) : null}
+              ) : null} */}
 
               {estratoDos ? (
                 <>

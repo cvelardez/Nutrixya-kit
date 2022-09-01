@@ -1,5 +1,12 @@
 import React from "react";
-import { FormGroup, Input, Label, Table } from "reactstrap";
+import { FiHelpCircle } from "react-icons/fi";
+import {
+  FormGroup,
+  Input,
+  Label,
+  Table,
+  UncontrolledTooltip,
+} from "reactstrap";
 import ModalFertilizanteAsuffre from "./Modal/ModalFertilizanteAsuffre";
 import ModalFertilizanteFosforo from "./Modal/ModalFertilizanteFosforo";
 import ModalFertilizanteNitrgeno from "./Modal/ModalFertilizanteNitrgeno";
@@ -12,69 +19,101 @@ const TableFertilizantes = () => {
       <thead>
         <tr>
           <th></th>
-          <th>Nitrogeno</th>
-          <th>Fosforo</th>
-          <th>potasio</th>
-          <th>asufre</th>
+          <th>Nitrógeno</th>
+          <th>Fósforo</th>
+          <th>Potasio</th>
+          <th>Asufre</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Nombre 2</td>
+          <td></td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>- Seleccione su Nitrógeno -</option>
+              <option>Amoníaco anhidro</option>
+              <option>Cianamida cálcica</option>
+              <option>Fosfato diamónico DAP</option>
+              <option>Fosfato monoamónico MAP</option>
+              <option>Fosfourea</option>
+              <option>Nitrato de amonio</option>
+              <option>Nitrato de amonio calcáreo CAN</option>
+              <option>Nitrato de potasio</option>
+              <option>Nitrato de sodio</option>
+              <option>Solmix (no esta en la base de datos)</option>
+              <option>Solmix boro</option>
+              <option>Solfos</option>
+              <option>SolUAN</option>
+              <option>SolUAN Plus</option>
+              <option>Sulfato de amonio</option>
+              <option>Urea</option>
+              <option>Otro</option>
             </Input>
           </td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>- Seleccione su Fósforo -</option>
+              <option>Fosfato diamónico DAP</option>
+              <option>Fosfato monoamónico MAP</option>
+              <option>Fosfato natural</option>
+              <option>Fosfourea</option>
+              <option>Solfos</option>
+              <option>Superfosfato simple de calcio SPS</option>
+              <option>Superfosfato triple de calcio SPT</option>
+              <option>Otro</option>
             </Input>
           </td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>- Seleccione su Potasio -</option>
+              <option>Cloruro de potasio</option>
+              <option>Nitrato de potasio</option>
+              <option>Sulfato de potasio</option>
+              <option>Otro</option>
             </Input>
           </td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>- Seleccione su Asufre -</option>
+              <option>Kieserita</option>
+              <option>Solmix boro</option>
+              <option>Solplus</option>
+              <option>Sulfato de amonio</option>
+              <option>Sulfato de potasio</option>
+              <option>Sulfer 95</option>
+              <option>Sulfonitrato de amonio</option>
+              <option>Superfosfato simple de calcio SPS</option>
+              <option>Yeso</option>
+              <option>Otro</option>
             </Input>
           </td>
         </tr>
         <tr>
-          <td>Cantidad Kg/kg</td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            Cantidad Kg/kg: <FiHelpCircle id="Cantidad" className="fs-5 ms-1" />
+          </td>
+          <UncontrolledTooltip placement="right" target="Cantidad">
+            <span className="fw-bolder">Cantidad Kg/kg</span> Composición del
+            fertilizante expresada en en kg/kg de cada elemento. <br />{" "}
+            <span className="fw-bolder">Ejemplo:</span> Fosfato monoamónico:
+            Composición (% ) : N 11- P 48- K 0<br />
+            Composición (kg/kg): N 0.11- P 0.21- K 0
+          </UncontrolledTooltip>
+          <td>
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
         </tr>
 
-        <tr>
+        {/* <tr>
           <td>Eficiencia %</td>
           <td>
             <ModalFertilizanteNitrgeno />
@@ -88,21 +127,50 @@ const TableFertilizantes = () => {
           <td>
             <ModalFertilizanteAsuffre />
           </td>
+        </tr> */}
+
+        <tr>
+          <td>
+            Eficiencia %: <FiHelpCircle id="Eficiencia" className="fs-5 ms-1" />
+          </td>
+          <UncontrolledTooltip placement="right" target="Eficiencia">
+            <span className="fw-bolder">Eficiencia %</span> Eficiencia de cada
+            elemento, en función del tipo de fertilizante, método de aplicación,
+            condiciones ambientales, tipo de suelo. <br />
+          </UncontrolledTooltip>
+          <td>
+            <Input id="text" name="text" placeholder="..." type="text" />
+          </td>
+          <td>
+            <Input id="text" name="text" placeholder="..." type="text" />
+          </td>
+          <td>
+            <Input id="text" name="text" placeholder="..." type="text" />
+          </td>
+          <td>
+            <Input id="text" name="text" placeholder="..." type="text" />
+          </td>
         </tr>
 
         <tr>
-          <td>Precio</td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            Precio u$s/tn: <FiHelpCircle id="Precio" className="fs-5 ms-1" />
+          </td>
+          <UncontrolledTooltip placement="right" target="Precio">
+            <span className="fw-bolder">Precio u$s/tn</span> Precio del
+            fertilizante expresado en dólares por tonelada. <br />
+          </UncontrolledTooltip>
+          <td>
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
           <td>
-            <Input id="text" name="text" placeholder="ej: 34" type="text" />
+            <Input id="text" name="text" placeholder="..." type="text" />
           </td>
         </tr>
       </tbody>

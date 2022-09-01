@@ -71,51 +71,53 @@ export default function LoteProvider({ children }) {
     compactionLevel: "",
     limitationForWaterlogging: "",
     rootableProfunity: "",
+
     // Estrato 1
     depth: "",
     sso4: "",
     phosphate: "",
-    cic: "",
-    nai: "",
+    cic: "17",
+    nai: 0.3,
     soilDensity: "",
     totalN: "",
-    ce: "",
-    cai: "",
-    ki: "",
+    ce: 0.5,
+    cai: 12,
+    ki: 2,
     nno3: "",
-    fmin: "",
+    fmin: 0.11,
     ph: "",
-    mgi: "",
+    mgi: 1.2,
+
     // Estrato 2
     depthStratumTwo: "",
     sso4StratumTwo: "",
     pStratumTwo: "",
-    cicStratumTwo: "",
-    naiStratumTwo: "",
+    cicStratumTwo: 17,
+    naiStratumTwo: 0.3,
     soilDensityStratumTwo: "",
     totalNStratumTwo: "",
-    ceStratumTwo: "",
-    caiStratumTwo: "",
-    kiStratumTwo: "",
+    ceStratumTwo: 0.5,
+    caiStratumTwo: 12,
+    kiStratumTwo: 2,
     nno3StratumTwo: "",
-    fminStratumTwo: "",
+    fminStratumTwo: 0.11,
     phStratumTwo: "",
-    mgiStratumTwo: "",
+    mgiStratumTwo: 1.2,
     // Estrato 3
     depthStratumThree: "",
     sso4StratumThree: "",
     pStratumThree: "",
-    cicStratumThree: "",
-    naiStratumThree: "",
+    cicStratumThree: 17,
+    naiStratumThree: 0.3,
     soilDensityStratumThree: "",
     totalNStratumThree: "",
-    ceStratumThree: "",
-    caiStratumThree: "",
-    kiStratumThree: "",
+    ceStratumThree: 0.5,
+    caiStratumThree: 12,
+    kiStratumThree: 2,
     nno3StratumThree: "",
-    fminStratumThree: "",
+    fminStratumThree: 0.11,
     phStratumThree: "",
-    mgiStratumThree: "",
+    mgiStratumThree: 1.2,
     // ** wizard cultivo
     crop: "",
     targetPerformance: "",
@@ -126,7 +128,7 @@ export default function LoteProvider({ children }) {
     timeElapsedBetweenHarvestAndSowing: "",
     performDirectSowing: true,
     // ** wizard fertilizantes
-    starterOrOrganicFertilizer: "Ninguno",
+    starterOrOrganicFertilizer: "",
     quantity: "",
     starter: "",
     organicFertilizer: "",
@@ -168,6 +170,7 @@ export default function LoteProvider({ children }) {
     ) {
       if (dataForm.id === null) {
         createData(dataForm);
+
         setDataForm({
           id: null,
           name: "",
@@ -178,6 +181,7 @@ export default function LoteProvider({ children }) {
         });
       } else {
         updateData(dataForm);
+
         setDataForm({
           id: null,
           name: "",

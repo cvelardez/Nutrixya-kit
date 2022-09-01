@@ -51,6 +51,8 @@ const Cultivo = ({ stepper }) => {
 
     if (!values.crop) {
       errors.crop = "Obligatorio";
+    } else if (values.crop === "Seleccione un cultivo") {
+      errors.crop = "Obligatorio";
     }
 
     if (!values.targetPerformance) {
@@ -67,6 +69,8 @@ const Cultivo = ({ stepper }) => {
 
     if (!values.predecessorCrop) {
       errors.predecessorCrop = "Obligatorio";
+    } else if (values.predecessorCrop === "Seleccione un cultivo") {
+      errors.predecessorCrop = "Obligatorio";
     }
 
     if (!values.yieldOfThePredecessorCrop) {
@@ -74,6 +78,11 @@ const Cultivo = ({ stepper }) => {
     }
 
     if (!values.timeElapsedBetweenHarvestAndSowing) {
+      errors.timeElapsedBetweenHarvestAndSowing = "Obligatorio";
+    } else if (
+      values.timeElapsedBetweenHarvestAndSowing ===
+      "Seleccione el tiempo transcurrido"
+    ) {
       errors.timeElapsedBetweenHarvestAndSowing = "Obligatorio";
     }
 
@@ -101,6 +110,9 @@ const Cultivo = ({ stepper }) => {
                   className={formErrors.crop ? `error_input_register` : null}
                   onChange={handleChange}
                 >
+                  <option value={"Seleccione un cultivo"}>
+                    - Seleccione un cultivo -
+                  </option>
                   <option value={"Alfalfa"}>Alfalfa</option>
                   <option value={"Algodón"}>Algodón</option>
                   <option value={"Arroz"}>Arroz</option>
@@ -123,9 +135,7 @@ const Cultivo = ({ stepper }) => {
                   <option value={"Haba"}>Haba</option>
                   <option value={"Lenteja"}>Lenteja</option>
                   <option value={"Lino"}>Lino</option>
-                  <option selected value={"Maíz grano"}>
-                    Maíz grano
-                  </option>
+                  <option value={"Maíz grano"}>Maíz grano</option>
                   <option value={"Maíz silo"}>Maíz silo</option>
                   <option value={"Maní"}>Maní</option>
                   <option value={"Papa"}>Papa</option>
@@ -276,6 +286,9 @@ const Cultivo = ({ stepper }) => {
                   }
                   onChange={handleChange}
                 >
+                  <option value={"Seleccione un cultivo"}>
+                    - Seleccione un cultivo -
+                  </option>
                   <option value={"Alfalfa"}>Alfalfa</option>
                   <option value={"Arroz"}>Arroz</option>
                   <option
@@ -283,10 +296,7 @@ const Cultivo = ({ stepper }) => {
                   >
                     Avena/cebada/centeno/trigo/raigráss forrajeros{" "}
                   </option>
-                  <option
-                    selected
-                    value={"Avena/cebada/centeno/trigo/raigráss grano"}
-                  >
+                  <option value={"Avena/cebada/centeno/trigo/raigráss grano"}>
                     Avena/cebada/centeno/trigo/raigráss grano
                   </option>
                   <option value={"Colza"}>Colza</option>
@@ -304,9 +314,7 @@ const Cultivo = ({ stepper }) => {
                   <option value={"Potrero duroPastura gramínea con leguminosa"}>
                     Potrero duro
                   </option>
-                  <option selected value={"Soja"}>
-                    Soja
-                  </option>
+                  <option value={"Soja"}>Soja</option>
                   <option
                     value={
                       "Trigo con vicia/triticale con vicia/similar forrajero"
@@ -385,11 +393,12 @@ const Cultivo = ({ stepper }) => {
                   }
                   onChange={handleChange}
                 >
+                  <option value={"Seleccione el tiempo transcurrido"}>
+                    - Seleccione el tiempo transcurrido -
+                  </option>
                   <option value={"Menos de 2 meses"}>Menos de 2 meses</option>
                   <option value={"De 2 a 4 meses"}>De 2 a 4 meses</option>
-                  <option selected value={"Mas de 4 meses"}>
-                    Mas de 4 meses
-                  </option>
+                  <option value={"Mas de 4 meses"}>Mas de 4 meses</option>
                 </Input>
 
                 {formErrors.timeElapsedBetweenHarvestAndSowing && (
