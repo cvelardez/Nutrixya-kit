@@ -148,6 +148,7 @@ export default function LoteProvider({ children }) {
 
   const [dataToEdit, setDataToEdit] = useState(null);
   const [addRecomendacion, setAddRecomendacion] = useState(null);
+  const [verRecomendacion, setVerRecomendacion] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
@@ -347,6 +348,8 @@ export default function LoteProvider({ children }) {
           setDataToEdit,
           dataToEdit,
           setAddRecomendacion,
+          verRecomendacion,
+          setVerRecomendacion,
           backModal,
           setBackModal,
           backModalHome,

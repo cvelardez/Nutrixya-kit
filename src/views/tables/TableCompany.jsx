@@ -45,6 +45,7 @@ const TableCompany = () => {
     setDataToEdit,
     setData,
     setAddRecomendacion,
+    setVerRecomendacion,
     idLoteDelete,
     setIdLoteDelete,
     deleteLoteModal,
@@ -167,7 +168,10 @@ const TableCompany = () => {
                   <DropdownMenu>
                     <DropdownItem className="w-100">
                       {dato.crop && dato.date ? (
-                        <Link to="/rendimiento">
+                        <Link
+                          to="/rendimiento"
+                          onClick={() => setVerRecomendacion(dato)}
+                        >
                           <Monitor className="me-50" size={15} />{" "}
                           <span className="align-middle">Ver</span>
                         </Link>
