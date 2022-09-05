@@ -17,6 +17,7 @@ const ApexRadiarChart = () => {
     series3: "#826bf8",
     series4: "#2b9bf4",
     series5: "#FFA1A1",
+    series6: "#FFA1A1",
   };
 
   // ** Chart Options
@@ -27,18 +28,19 @@ const ApexRadiarChart = () => {
     },
     labels: [
       "A la siembra",
-      "Arrancadoro abono",
-      "Por rastro y precipitacion",
-      "Se miniraliza",
-      "Por fijacion simbiotica",
+      "Arrancador o abono orgánico",
+      "Rastrojo y precipitación",
+      "Mineralización",
+      "Fijación simbiótica",
+      "Podría haber fijado",
     ],
-
     colors: [
       donutColors.series1,
       donutColors.series2,
       donutColors.series3,
       donutColors.series4,
       donutColors.series5,
+      donutColors.series6,
     ],
     dataLabels: {
       enabled: true,
@@ -116,11 +118,11 @@ const ApexRadiarChart = () => {
   };
 
   // ** Chart Series
-  const series = [20, 0, 10, 30, 40];
+  const series = [20, 0, 10, 30, 40, 4];
 
   return (
     <Card>
-      <CardHeader>
+      {/* <CardHeader>
         <div>
           <CardTitle className="mb-75" tag="h4">
             Expense Ratio 111
@@ -129,7 +131,7 @@ const ApexRadiarChart = () => {
             Spending on various categories
           </CardSubtitle>
         </div>
-      </CardHeader>
+      </CardHeader> */}
       <CardBody>
         <Chart options={options} series={series} type="donut" height={350} />
       </CardBody>

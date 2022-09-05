@@ -22,7 +22,7 @@ const TableFertilizantes = () => {
           <th>Nitrógeno</th>
           <th>Fósforo</th>
           <th>Potasio</th>
-          <th>Asufre</th>
+          <th>Azufre</th>
         </tr>
       </thead>
       <tbody>
@@ -30,7 +30,7 @@ const TableFertilizantes = () => {
           <td></td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>- Seleccione su Nitrógeno -</option>
+              <option>- Seleccione fertilizante Nitrógeno -</option>
               <option>Amoníaco anhidro</option>
               <option>Cianamida cálcica</option>
               <option>Fosfato diamónico DAP</option>
@@ -52,7 +52,7 @@ const TableFertilizantes = () => {
           </td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>- Seleccione su Fósforo -</option>
+              <option>- Seleccione fertilizante Fósforo -</option>
               <option>Fosfato diamónico DAP</option>
               <option>Fosfato monoamónico MAP</option>
               <option>Fosfato natural</option>
@@ -65,7 +65,7 @@ const TableFertilizantes = () => {
           </td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>- Seleccione su Potasio -</option>
+              <option>- Seleccione fertilizante Potasio -</option>
               <option>Cloruro de potasio</option>
               <option>Nitrato de potasio</option>
               <option>Sulfato de potasio</option>
@@ -74,7 +74,7 @@ const TableFertilizantes = () => {
           </td>
           <td>
             <Input id="exampleSelect" name="select" type="select">
-              <option>- Seleccione su Asufre -</option>
+              <option>- Seleccione fertilizante Azufre -</option>
               <option>Kieserita</option>
               <option>Solmix boro</option>
               <option>Solplus</option>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Col,
   Row,
@@ -23,6 +23,8 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
+import { DataContext } from "../utility/context/LoteProvider";
+
 // ** import wizard
 import WizardRendimiento from "./WizardRendimiento";
 
@@ -33,8 +35,14 @@ import ApexCharts from "../components/Graficos/charts/apex";
 import { FiHelpCircle } from "react-icons/fi";
 
 const Rendimiento = () => {
+  const { verRecomendacion } = useContext(DataContext);
+
   const [modalFertilizantes, setModalFertilizantes] = useState(false);
+  const [modalDisponibilidadDeAgua, setModalDisponibilidadDeAgua] =
+    useState(false);
   const toggleFertilizantes = () => setModalFertilizantes(!modalFertilizantes);
+  const toggleDisponibilidadDeAgua = () =>
+    setModalDisponibilidadDeAgua(!modalDisponibilidadDeAgua);
 
   return (
     <>
@@ -46,6 +54,7 @@ const Rendimiento = () => {
         <CardHeader>
           <CardTitle className="fs-2 fw-bolder mb-1">
             Recomendación nutricional:
+            {/* {JSON.stringify(verRecomendacion, null, 2)} */}
           </CardTitle>
         </CardHeader>
         <CardBody>
@@ -55,7 +64,8 @@ const Rendimiento = () => {
                 <div className="d-flex align-items-center gap-1">
                   <span className="fs-1 fw-bolder text-primary">N</span>{" "}
                   <CardText className="fs-4">
-                    Urea: Unidad <span className="fw-bolder">40 kg/ha</span>
+                    {/* Urea: Unidad  */}
+                    Urea: <span className="fw-bolder">120 kg/ha</span>
                   </CardText>
                 </div>
               </Row>
@@ -64,8 +74,9 @@ const Rendimiento = () => {
                 <div className="d-flex align-items-center gap-1">
                   <span className="fs-1 fw-bolder text-primary">P</span>{" "}
                   <CardText className="fs-4">
-                    SPS Superfosfato simple de Ca: Unidad{" "}
-                    <span className="fw-bolder">40 kg/ha</span>
+                    {/* SPS Superfosfato simple de Ca: Unidad{" "} */}
+                    SPS Superfosfato simple de Ca:{" "}
+                    <span className="fw-bolder">80 kg/ha</span>
                   </CardText>
                 </div>
               </Row>
@@ -74,8 +85,9 @@ const Rendimiento = () => {
                 <div className="d-flex align-items-center gap-1">
                   <span className="fs-1 fw-bolder text-primary">K</span>{" "}
                   <CardText className="fs-4">
-                    Cloruro de potasio: Unidad{" "}
-                    <span className="fw-bolder">40 kg/ha</span>
+                    {/* Cloruro de potasio: Unidad{" "} */}
+                    Cloruro de potasio:{" "}
+                    <span className="fw-bolder">0 kg/ha</span>
                   </CardText>
                 </div>
               </Row>
@@ -84,7 +96,8 @@ const Rendimiento = () => {
                 <div className="d-flex align-items-center gap-1">
                   <span className="fs-1 fw-bolder text-primary">S</span>{" "}
                   <CardText className="fs-4">
-                    Yeso: Unidad <span className="fw-bolder">40 kg/ha</span>
+                    {/* Yeso: Unidad  */}
+                    Yeso: <span className="fw-bolder">0 kg/ha</span>
                   </CardText>
                 </div>
               </Row>
@@ -112,7 +125,49 @@ const Rendimiento = () => {
                     Cancelar
                   </Button>{" "}
                   <Button color="primary" onClick={toggleFertilizantes}>
-                    Guardar
+                    Aceptar
+                  </Button>
+                </ModalFooter>
+              </Modal>
+
+              <Button
+                color="primary"
+                block
+                onClick={toggleDisponibilidadDeAgua}
+              >
+                Disponibilidad de agua
+              </Button>
+
+              <Modal
+                isOpen={modalDisponibilidadDeAgua}
+                toggle={toggleDisponibilidadDeAgua}
+                centered={true}
+              >
+                <ModalHeader>Seleccione su disponibilidad de agua</ModalHeader>
+                <ModalBody>
+                  <Label htmlFor="disponibilidadDeAgua">
+                    Disponibilidad de agua
+                  </Label>
+                  <Input
+                    type="select"
+                    name="disponibilidadDeAgua"
+                    id="disponibilidadDeAgua"
+                  >
+                    <option value="seleccioneSuDisponibilidad">
+                      Seleccione su disponibilidad
+                    </option>
+                    <option value="Año húmedo">Año húmedo</option>
+                    <option value="Año neutro">Año neutro</option>
+                    <option value="Año seco">Año seco</option>
+                    <option value="Riego">Riego</option>
+                  </Input>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" onClick={toggleDisponibilidadDeAgua}>
+                    Cancelar
+                  </Button>{" "}
+                  <Button color="primary" onClick={toggleDisponibilidadDeAgua}>
+                    Aceptar
                   </Button>
                 </ModalFooter>
               </Modal>
@@ -128,7 +183,8 @@ const Rendimiento = () => {
                   <DropdownItem className="w-100">Riego</DropdownItem>
                 </DropdownMenu>
               </Dropdown> */}
-              <div className="w-100">
+
+              {/* <div className="w-100">
                 <Label htmlFor="disponibilidadDeAgua">
                   Disponibilidad de agua
                 </Label>
@@ -145,11 +201,11 @@ const Rendimiento = () => {
                   <option value="Año seco">Año seco</option>
                   <option value="Riego">Riego</option>
                 </Input>
-              </div>
+              </div> */}
 
               <div className="w-100">
                 <Label>Fecha de siembra</Label>
-                <Input type="date" />
+                <Input type="date" value={verRecomendacion.date} />
               </div>
             </div>
           </div>
