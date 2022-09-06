@@ -9,6 +9,20 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 import ApexCharts from "../../components/Graficos/charts/apex";
 
 const BalanceDeN = () => {
+  const dataValueNumber = {
+    data1: 62,
+    data2: 9,
+    data3: 30,
+    data4: 118,
+    data5: 0,
+    data6: 0,
+    dataTwo: {
+      data1: 219,
+      data2: 257,
+      data3: -38,
+      data4: 0,
+    },
+  };
   const data = {
     labels: [
       "A la siembra",
@@ -21,7 +35,14 @@ const BalanceDeN = () => {
     datasets: [
       {
         label: "# of Votes",
-        data: [20, 10, 40, 5, 20, 30],
+        data: [
+          dataValueNumber.data1,
+          dataValueNumber.data2,
+          dataValueNumber.data3,
+          dataValueNumber.data4,
+          dataValueNumber.data5,
+          dataValueNumber.data6,
+        ],
         backgroundColor: [
           "#f96d00",
           "#f90000",
@@ -57,7 +78,7 @@ const BalanceDeN = () => {
       <h1>Balance De N</h1>{" "}
       <div className="py-2">
         <Row>
-          <Col sm="12" md="4" className="mb-sm-4">
+          <Col sm="12" md="4" className="mb-4">
             <Doughnut data={data} options={options} />
           </Col>
 
@@ -73,7 +94,10 @@ const BalanceDeN = () => {
                   className="colorChart"
                 ></div>
                 <CardText className="fs-3">
-                  A la siembra: <span className="fw-bolder">20 kgN/ha</span>
+                  A la siembra:{" "}
+                  <span className="fw-bolder">
+                    {dataValueNumber.data1} kgN/ha
+                  </span>
                 </CardText>
               </li>
 
@@ -84,7 +108,9 @@ const BalanceDeN = () => {
                 ></div>
                 <CardText className="fs-3">
                   Arrancador o abono orgánico:{" "}
-                  <span className="fw-bolder">10 kgN/ha</span>
+                  <span className="fw-bolder">
+                    {dataValueNumber.data2} kgN/ha
+                  </span>
                 </CardText>
               </li>
 
@@ -95,7 +121,9 @@ const BalanceDeN = () => {
                 ></div>
                 <CardText className="fs-3">
                   Rastrojo y precipitación:{" "}
-                  <span className="fw-bolder">40 kgN/ha</span>
+                  <span className="fw-bolder">
+                    {dataValueNumber.data3} kgN/ha
+                  </span>
                 </CardText>
               </li>
 
@@ -105,7 +133,10 @@ const BalanceDeN = () => {
                   className="colorChart"
                 ></div>
                 <CardText className="fs-3">
-                  Mineralización: <span className="fw-bolder">5 kgN/ha</span>
+                  Mineralización:{" "}
+                  <span className="fw-bolder">
+                    {dataValueNumber.data4} kgN/ha
+                  </span>
                 </CardText>
               </li>
 
@@ -116,7 +147,9 @@ const BalanceDeN = () => {
                 ></div>
                 <CardText className="fs-3">
                   Fijación simbiótica:{" "}
-                  <span className="fw-bolder">20 kgN/ha</span>
+                  <span className="fw-bolder">
+                    {dataValueNumber.data5} kgN/ha
+                  </span>
                 </CardText>
               </li>
 
@@ -127,7 +160,9 @@ const BalanceDeN = () => {
                 ></div>
                 <CardText className="fs-3">
                   Podría haber fijado:{" "}
-                  <span className="fw-bolder">30 kgN/ha</span>
+                  <span className="fw-bolder">
+                    {dataValueNumber.data6} kgN/ha
+                  </span>
                 </CardText>
               </li>
             </List>
@@ -139,26 +174,38 @@ const BalanceDeN = () => {
             <List type="unstyled" className="d-flex flex-column gap-3">
               <li>
                 <CardText className="fs-2">
-                  Oferta: <span className="fw-bolder">………..kgN/ha</span>
+                  Oferta:{" "}
+                  <span className="fw-bolder">
+                    {dataValueNumber.dataTwo.data1}kgN/ha
+                  </span>
                 </CardText>
               </li>
 
               <li>
                 <CardText className="fs-2">
-                  Demanda: <span className="fw-bolder">………..kgN/ha</span>
+                  Demanda:{" "}
+                  <span className="fw-bolder">
+                    {dataValueNumber.dataTwo.data2}kgN/ha
+                  </span>
                 </CardText>
               </li>
 
               <li>
                 <CardText className="fs-2">
-                  Exceso o déficit: <span className="fw-bolder">………kgN/ha</span>
+                  Déficit:{" "}
+                  <span className="fw-bolder">
+                    {dataValueNumber.dataTwo.data3}kgN/ha
+                  </span>{" "}
+                  Comienza el día 38.
                 </CardText>
               </li>
 
               <li>
                 <CardText className="fs-2">
                   Se removilizó en el cultivo:{" "}
-                  <span className="fw-bolder">……………..kgN/ha</span>
+                  <span className="fw-bolder">
+                    {dataValueNumber.dataTwo.data4}kgN/ha
+                  </span>
                 </CardText>
               </li>
             </List>
