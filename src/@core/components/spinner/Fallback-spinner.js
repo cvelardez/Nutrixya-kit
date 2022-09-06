@@ -1,5 +1,5 @@
 // ** Logo
-import logo from "@src/assets/images/logo/logo.svg";
+import logo from "@src/assets/images/logo/logoNutrixya.svg";
 
 const SpinnerComponent = () => {
   return (

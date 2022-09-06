@@ -72,7 +72,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#f96d00" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   A la siembra: <span className="fw-bolder">20 kgN/ha</span>
                 </CardText>
               </li>
@@ -82,7 +82,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#f90000" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Arrancador o abono orgánico:{" "}
                   <span className="fw-bolder">10 kgN/ha</span>
                 </CardText>
@@ -93,7 +93,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#ffe600" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Rastrojo y precipitación:{" "}
                   <span className="fw-bolder">40 kgN/ha</span>
                 </CardText>
@@ -104,7 +104,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#009ef9" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Mineralización: <span className="fw-bolder">5 kgN/ha</span>
                 </CardText>
               </li>
@@ -114,7 +114,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#0400f9" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Fijación simbiótica:{" "}
                   <span className="fw-bolder">20 kgN/ha</span>
                 </CardText>
@@ -125,7 +125,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#f900cf" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Podría haber fijado:{" "}
                   <span className="fw-bolder">30 kgN/ha</span>
                 </CardText>

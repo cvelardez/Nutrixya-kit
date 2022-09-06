@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 
 // ** import logoIcon
-import Logo from "../assets/images/logo/logo.svg";
+import Logo from "../assets/images/logo/logoNutrixya.svg";
 
 // ** Styles
 import "@styles/react/pages/page-authentication.scss";
@@ -40,7 +40,7 @@ const ForgotPassword = () => {
       <Row className="auth-inner m-0">
         <Link className="brand-logo" to="/login">
           <img src={Logo} alt={"logo icon"} />
-          <h2 className="brand-text text-primary ms-1">Nutrixya</h2>
+          <h2 className="brand-text txtLogo ms-1">Nutrixya</h2>
         </Link>
         <Col className="d-none d-lg-flex align-items-center p-5" lg="8" sm="12">
           <div className="w-100 d-lg-flex align-items-center justify-content-center px-5">

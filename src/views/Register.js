@@ -7,7 +7,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 // ** Import logo icon
-import Logo from "../assets/images/logo/logo.svg";
+import Logo from "../assets/images/logo/logoNutrixya.svg";
 
 // ** Custom Hooks
 import { useSkin } from "@hooks/useSkin";
@@ -156,7 +156,7 @@ const Register = () => {
           <Link className="brand-logo" to="/login">
             <img src={Logo} alt={"Logo"} />
 
-            <h2 className="brand-text text-primary ms-1">Nutrixya</h2>
+            <h2 className="brand-text txtLogo ms-1">Nutrixya</h2>
           </Link>
           <Col
             className="d-none d-lg-flex align-items-center p-5"

@@ -82,7 +82,7 @@ const Nutrientes = () => {
         <span className="fw-bolder">…………..kg/ha</span>
       </CardText>
       <Row>
-        <Col sm="12" md="12">
+        <Col sm="12" md="8">
           <Bar data={data} options={options} />
         </Col>
 
