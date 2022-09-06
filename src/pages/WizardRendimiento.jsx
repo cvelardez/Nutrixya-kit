@@ -26,8 +26,8 @@ const WizardRendimiento = () => {
       content: <Nutrientes stepper={stepper} type="wizard-vertical" />,
     },
     {
-      id: "analisisDeSensibilidad",
-      title: "Analisis De Sensibilidad",
+      id: "analisisDeInversion",
+      title: "Análisis De inversión",
       // subtitle: "Enter Your Account Details.",
       content: (
         <AnalisisDeSensibilidad stepper={stepper} type="wizard-vertical" />

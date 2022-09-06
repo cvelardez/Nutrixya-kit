@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Row, Col } from "reactstrap";
+import { Row, Col, CardText } from "reactstrap";
 
 import {
   Chart as ChartJS,
@@ -27,17 +27,32 @@ ChartJS.register(
 );
 
 const AnalisisDeSensibilidad = () => {
-  const scores = [6, 5, 5, 5, 3, 4, 6, 4, 5];
+  const dataValueNumberAnalisis = {
+    data1: 461,
+    data2: 1.36,
+    data3: 9000,
+  };
+
+  const scoresOne = [0, 20, 40, 30, 10, 1, 0];
+  const scoresTwo = [0, 5, 10, 20, 30, 40, 50];
 
   const data = {
     labels: [100, 200, 300, 400, 500, 600, 700],
     datasets: [
       {
         label: "Dataset 1",
-        data: scores,
+        data: scoresOne,
         tension: 0.3,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+
+      {
+        label: "Dataset 2",
+        data: scoresTwo,
+        tension: 0.3,
+        borderColor: "rgb(99, 135, 255)",
+        backgroundColor: "rgba(99, 135, 255, 0.404)",
       },
     ],
   };
@@ -58,13 +73,52 @@ const AnalisisDeSensibilidad = () => {
 
   return (
     <>
-      <h1 className="mb-5">Análisis De Sensibilidad</h1>
-      {/* <div className="w-100  d-flex align-items-center justify-content-center">
-        <h2 className="fs-2 fw-bolder text-primary mt-2">En construcción</h2>
-      </div> */}
-      <Row>
-        <Col sm="12" md="6">
+      <h1 className="mb-5">Análisis De inversión</h1>
+      <Row className="my-5">
+        <Col
+          sm="12"
+          md="6"
+          className="d-flex flex-column align-items-end gap-2"
+        >
           <Line data={data} options={options} />
+
+          <CardText className="fs-4 mb-3">
+            Rendimiento:
+            <span className="fw-bolder">
+              {" "}
+              {dataValueNumberAnalisis.data3} kg/ha
+            </span>
+          </CardText>
+        </Col>
+
+        <Col sm="12" md="6">
+          <div className="mb-1 d-flex align-items-center gap-1">
+            <div
+              style={{ backgroundColor: "rgb(255, 99, 132)" }}
+              className="colorChart"
+            ></div>
+            <CardText className="fs-3">
+              Utilidad:
+              <span className="fw-bolder">
+                {" "}
+                {dataValueNumberAnalisis.data1} u$s/ha
+              </span>
+            </CardText>
+          </div>
+
+          <div className="mb-1 d-flex align-items-center gap-1">
+            <div
+              style={{ backgroundColor: "rgb(99, 135, 255)" }}
+              className="colorChart"
+            ></div>
+            <CardText className="fs-3">
+              Rentabilidad:
+              <span className="fw-bolder">
+                {" "}
+                {dataValueNumberAnalisis.data2} (Utilidad u$s/Inversión u$s)
+              </span>
+            </CardText>
+          </div>
         </Col>
       </Row>
     </>
