@@ -76,7 +76,6 @@ const Nutrientes = () => {
           dataValueNumberNutrientes.data1,
           dataValueNumberNutrientes.data2,
           dataValueNumberNutrientes.data3,
-          dataValueNumberNutrientes.data3,
           dataValueNumberNutrientes.data4,
           dataValueNumberNutrientes.data5,
         ],
