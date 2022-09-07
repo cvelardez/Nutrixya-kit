@@ -93,7 +93,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#f96d00" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-3">
+                <CardText className="fs-4">
                   A la siembra:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.data1} kgN/ha
@@ -106,7 +106,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#f90000" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-3">
+                <CardText className="fs-4">
                   Arrancador o abono orgánico:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.data2} kgN/ha
@@ -119,7 +119,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#ffe600" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-3">
+                <CardText className="fs-4">
                   Rastrojo y precipitación:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.data3} kgN/ha
@@ -132,7 +132,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#009ef9" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-3">
+                <CardText className="fs-4">
                   Mineralización:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.data4} kgN/ha
@@ -145,7 +145,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#0400f9" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-3">
+                <CardText className="fs-4">
                   Fijación simbiótica:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.data5} kgN/ha
@@ -158,7 +158,7 @@ const BalanceDeN = () => {
                   style={{ backgroundColor: "#f900cf" }}
                   className="colorChart"
                 ></div>
-                <CardText className="fs-3">
+                <CardText className="fs-4">
                   Podría haber fijado:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.data6} kgN/ha
@@ -173,7 +173,7 @@ const BalanceDeN = () => {
           <Col sm="12" md="12" className="p-3">
             <List type="unstyled" className="d-flex flex-column gap-3">
               <li>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Oferta:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.dataTwo.data1}kgN/ha
@@ -182,7 +182,7 @@ const BalanceDeN = () => {
               </li>
 
               <li>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Demanda:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.dataTwo.data2}kgN/ha
@@ -191,7 +191,7 @@ const BalanceDeN = () => {
               </li>
 
               <li>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Déficit:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.dataTwo.data3}kgN/ha
@@ -201,7 +201,7 @@ const BalanceDeN = () => {
               </li>
 
               <li>
-                <CardText className="fs-2">
+                <CardText className="fs-3">
                   Se removilizó en el cultivo:{" "}
                   <span className="fw-bolder">
                     {dataValueNumber.dataTwo.data4}kgN/ha

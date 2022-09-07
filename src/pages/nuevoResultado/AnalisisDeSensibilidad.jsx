@@ -97,7 +97,7 @@ const AnalisisDeSensibilidad = () => {
               style={{ backgroundColor: "rgb(255, 99, 132)" }}
               className="colorChart"
             ></div>
-            <CardText className="fs-3">
+            <CardText className="fs-4">
               Utilidad:
               <span className="fw-bolder">
                 {" "}
@@ -111,7 +111,7 @@ const AnalisisDeSensibilidad = () => {
               style={{ backgroundColor: "rgb(99, 135, 255)" }}
               className="colorChart"
             ></div>
-            <CardText className="fs-3">
+            <CardText className="fs-4">
               Rentabilidad:
               <span className="fw-bolder">
                 {" "}
