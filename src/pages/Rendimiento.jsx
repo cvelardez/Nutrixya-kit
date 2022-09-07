@@ -75,7 +75,7 @@ const Rendimiento = () => {
                   <span className="fs-1 fw-bolder text-primary">P</span>{" "}
                   <CardText className="fs-4">
                     {/* Superfosfato triple de calcio SPS: Unidad{" "} */}
-                    Superfosfato triple de calcio SPS:{" "}
+                    Superfosfato triple de calcio SPT:{" "}
                     <span className="fw-bolder">80 kg/ha</span>
                   </CardText>
                 </div>

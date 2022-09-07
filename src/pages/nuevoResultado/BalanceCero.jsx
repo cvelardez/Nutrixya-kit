@@ -5,10 +5,10 @@ const BalanceCero = () => {
   return (
     <>
       <h1 className="mb-3">Balance Cero</h1>
-      {/* <div className="w-100  d-flex align-items-center justify-content-center">
+      <div className="w-100  d-flex align-items-center justify-content-center">
         <h2 className="fs-2 fw-bolder text-primary mt-2">En construcción</h2>
-      </div> */}
-      <CardSubtitle className="fs-2 mb-3 fw-bold">
+      </div>
+      {/* <CardSubtitle className="fs-2 mb-3 fw-bold">
         Dosis mínima para evitar el agotamiento del suelo.
       </CardSubtitle>
 
@@ -65,7 +65,7 @@ const BalanceCero = () => {
         Para enriquecer 20 cm de suelo se debe aplicar además{" "}
         <span className="fw-bolder">209 kg/ha</span> <br /> de Superfosfato
         simple de calcio por cada ppm de P que se desee incrementar.
-      </CardText>
+      </CardText> */}
     </>
   );
 };

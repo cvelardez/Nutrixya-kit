@@ -97,7 +97,7 @@ const Nutrientes = () => {
     <>
       <h1 className="mb-5">Rendimiento vs Nutrientes</h1>
 
-      <CardText className="fs-2 mb-2">
+      <CardText className="fs-3 mb-2">
         Rendimiento sin fertilizar:{" "}
         <span className="fw-bolder">
           {dataValueNumberNutrientes.dataTitle}kg/ha
@@ -115,7 +115,7 @@ const Nutrientes = () => {
                 style={{ backgroundColor: "#f96d00" }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-2">
+              <CardText className="fs-3">
                 Rendimiento objetivo:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data1} kg/ha
@@ -128,7 +128,7 @@ const Nutrientes = () => {
                 style={{ backgroundColor: "#f90000" }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-2">
+              <CardText className="fs-3">
                 Rendimiento sin aplicar N:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data2} kg/ha
@@ -141,7 +141,7 @@ const Nutrientes = () => {
                 style={{ backgroundColor: "#ffe600" }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-2">
+              <CardText className="fs-3">
                 Rendimiento sin aplicar P:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data3} kg/ha
@@ -154,7 +154,7 @@ const Nutrientes = () => {
                 style={{ backgroundColor: "#009ef9" }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-2">
+              <CardText className="fs-3">
                 Rendimiento sin aplicar K:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data4} kg/ha
@@ -167,7 +167,7 @@ const Nutrientes = () => {
                 style={{ backgroundColor: "#0400f9" }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-2">
+              <CardText className="fs-3">
                 Rendimiento sin aplicar S:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data5} kg/ha
