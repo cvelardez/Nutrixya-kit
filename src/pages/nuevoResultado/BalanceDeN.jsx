@@ -9,6 +9,15 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 import ApexCharts from "../../components/Graficos/charts/apex";
 
 const BalanceDeN = () => {
+  const colorChart = {
+    color1: "#ff6961",
+    color2: "#77dd77",
+    color3: "#fdfd96",
+    color4: "#84b6f4",
+    color5: "#f15fff",
+    color6: "#a68069",
+  };
+
   const dataValueNumber = {
     data1: 62,
     data2: 9,
@@ -44,20 +53,20 @@ const BalanceDeN = () => {
           dataValueNumber.data6,
         ],
         backgroundColor: [
-          "#fabfb7",
-          "#fdf9c4",
-          "#ffda9e",
-          "#c5c6c8",
-          "#b2e2f2",
-          "#89a0be",
+          colorChart.color1,
+          colorChart.color2,
+          colorChart.color3,
+          colorChart.color4,
+          colorChart.color5,
+          colorChart.color6,
         ],
         borderColor: [
-          "#fabfb7",
-          "#fdf9c4",
-          "#ffda9e",
-          "#c5c6c8",
-          "#b2e2f2",
-          "#89a0be",
+          colorChart.color1,
+          colorChart.color2,
+          colorChart.color3,
+          colorChart.color4,
+          colorChart.color5,
+          colorChart.color5,
         ],
         borderWidth: 1,
       },
@@ -90,7 +99,7 @@ const BalanceDeN = () => {
             <List type="unstyled">
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#fabfb7" }}
+                  style={{ backgroundColor: `${colorChart.color1}` }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -103,7 +112,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#fdf9c4" }}
+                  style={{ backgroundColor: `${colorChart.color2}` }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -116,7 +125,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#ffda9e" }}
+                  style={{ backgroundColor: `${colorChart.color3}` }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -129,7 +138,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#c5c6c8" }}
+                  style={{ backgroundColor: `${colorChart.color4}` }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -142,7 +151,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#b2e2f2" }}
+                  style={{ backgroundColor: `${colorChart.color5}` }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -155,7 +164,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#89a0be" }}
+                  style={{ backgroundColor: `${colorChart.color6}` }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">

@@ -27,6 +27,23 @@ ChartJS.register(
 );
 
 const AnalisisDeSensibilidad = () => {
+  const colorChart = {
+    color1: "#ff6961",
+    color2: "#77dd77",
+    color3: "#fdfd96",
+    color4: "#84b6f4",
+    color5: "#f15fff",
+    color6: "#a68069",
+    colorOpacity: {
+      color1: "#ff696150",
+      color2: "#77dd7750",
+      color3: "#fdfd9650",
+      color4: "#84b6f450",
+      color5: "#f15fff50",
+      color6: "#a6806950",
+    },
+  };
+
   const dataValueNumberAnalisis = {
     data1: 461,
     data2: 1.36,
@@ -43,16 +60,16 @@ const AnalisisDeSensibilidad = () => {
         label: "Dataset 1",
         data: scoresOne,
         tension: 0.3,
-        borderColor: "#fabfb7",
-        backgroundColor: "#fabfb750",
+        borderColor: colorChart.color1,
+        backgroundColor: colorChart.colorOpacity.color1,
       },
 
       {
         label: "Dataset 2",
         data: scoresTwo,
         tension: 0.3,
-        borderColor: "#89a0be",
-        backgroundColor: "#89a0be50",
+        borderColor: colorChart.color5,
+        backgroundColor: colorChart.colorOpacity.color5,
       },
     ],
   };
@@ -94,7 +111,7 @@ const AnalisisDeSensibilidad = () => {
         <Col sm="12" md="6">
           <div className="mb-1 d-flex align-items-center gap-1">
             <div
-              style={{ backgroundColor: "#fabfb7" }}
+              style={{ backgroundColor: `${colorChart.color1}` }}
               className="colorChart"
             ></div>
             <CardText className="fs-5">
@@ -108,7 +125,7 @@ const AnalisisDeSensibilidad = () => {
 
           <div className="mb-1 d-flex align-items-center gap-1">
             <div
-              style={{ backgroundColor: "#89a0be" }}
+              style={{ backgroundColor: `${colorChart.color5}` }}
               className="colorChart"
             ></div>
             <CardText className="fs-5">
