@@ -44,20 +44,20 @@ const BalanceDeN = () => {
           dataValueNumber.data6,
         ],
         backgroundColor: [
-          "#f96d00",
-          "#f90000",
-          "#ffe600",
-          "#009ef9",
-          "#0400f9",
-          "#f900cf",
+          "#fabfb7",
+          "#fdf9c4",
+          "#ffda9e",
+          "#c5c6c8",
+          "#b2e2f2",
+          "#89a0be",
         ],
         borderColor: [
-          "#f96d00",
-          "#f90000",
-          "#ffe600",
-          "#009ef9",
-          "#0400f9",
-          "#f900cf",
+          "#fabfb7",
+          "#fdf9c4",
+          "#ffda9e",
+          "#c5c6c8",
+          "#b2e2f2",
+          "#89a0be",
         ],
         borderWidth: 1,
       },
@@ -90,7 +90,7 @@ const BalanceDeN = () => {
             <List type="unstyled">
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#f96d00" }}
+                  style={{ backgroundColor: "#fabfb7" }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -103,7 +103,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#f90000" }}
+                  style={{ backgroundColor: "#fdf9c4" }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -116,7 +116,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#ffe600" }}
+                  style={{ backgroundColor: "#ffda9e" }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -129,7 +129,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#009ef9" }}
+                  style={{ backgroundColor: "#c5c6c8" }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -142,7 +142,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#0400f9" }}
+                  style={{ backgroundColor: "#b2e2f2" }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">
@@ -155,7 +155,7 @@ const BalanceDeN = () => {
 
               <li className="mb-1 d-flex align-items-center gap-1">
                 <div
-                  style={{ backgroundColor: "#f900cf" }}
+                  style={{ backgroundColor: "#89a0be" }}
                   className="colorChart"
                 ></div>
                 <CardText className="fs-4">

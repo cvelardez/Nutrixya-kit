@@ -43,16 +43,16 @@ const AnalisisDeSensibilidad = () => {
         label: "Dataset 1",
         data: scoresOne,
         tension: 0.3,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#fabfb7",
+        backgroundColor: "#fabfb750",
       },
 
       {
         label: "Dataset 2",
         data: scoresTwo,
         tension: 0.3,
-        borderColor: "rgb(99, 135, 255)",
-        backgroundColor: "rgba(99, 135, 255, 0.404)",
+        borderColor: "#89a0be",
+        backgroundColor: "#89a0be50",
       },
     ],
   };
@@ -94,10 +94,10 @@ const AnalisisDeSensibilidad = () => {
         <Col sm="12" md="6">
           <div className="mb-1 d-flex align-items-center gap-1">
             <div
-              style={{ backgroundColor: "rgb(255, 99, 132)" }}
+              style={{ backgroundColor: "#fabfb7" }}
               className="colorChart"
             ></div>
-            <CardText className="fs-4">
+            <CardText className="fs-5">
               Utilidad:
               <span className="fw-bolder">
                 {" "}
@@ -108,10 +108,10 @@ const AnalisisDeSensibilidad = () => {
 
           <div className="mb-1 d-flex align-items-center gap-1">
             <div
-              style={{ backgroundColor: "rgb(99, 135, 255)" }}
+              style={{ backgroundColor: "#89a0be" }}
               className="colorChart"
             ></div>
-            <CardText className="fs-4">
+            <CardText className="fs-5">
               Rentabilidad:
               <span className="fw-bolder">
                 {" "}

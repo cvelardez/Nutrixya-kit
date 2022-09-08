@@ -45,11 +45,11 @@ const Nutrientes = () => {
       {
         label: "Rendimientos",
         backgroundColor: [
-          "#f96d00",
-          "#f90000",
-          "#ffe600",
-          "#009ef9",
-          "#0400f9",
+          "#fabfb7",
+          "#fdf9c4",
+          "#ffda9e",
+          "#c5c6c8",
+          "#b2e2f2",
         ],
         brderColor: "black",
         borderWidth: 1,
@@ -58,19 +58,19 @@ const Nutrientes = () => {
         maxBarThickness: 80,
         // minBarLength: 2,
         hoverBackgroundColor: [
-          "#f96d0020",
-          "#f9000020",
-          "#ffe60020",
-          "#009ef920",
-          "#0400f920",
-          "#f900cf20",
+          "#fabfb750",
+          "#fdf9c450",
+          "#ffda9e50",
+          "#c5c6c850",
+          "#b2e2f250",
+          "#89a0be50",
         ],
         hoverBorderColor: [
-          "#f96d00",
-          "#f90000",
-          "#ffe600",
-          "#009ef9",
-          "#0400f9",
+          "#fabfb7",
+          "#fdf9c4",
+          "#ffda9e",
+          "#c5c6c8",
+          "#b2e2f2",
         ],
         data: [
           dataValueNumberNutrientes.data1,
@@ -112,7 +112,7 @@ const Nutrientes = () => {
           <List type="unstyled">
             <li className="mb-1 d-flex align-items-center gap-1">
               <div
-                style={{ backgroundColor: "#f96d00" }}
+                style={{ backgroundColor: "#fabfb7" }}
                 className="colorChart"
               ></div>
               <CardText className="fs-3">
@@ -125,7 +125,7 @@ const Nutrientes = () => {
 
             <li className="mb-1 d-flex align-items-center gap-1">
               <div
-                style={{ backgroundColor: "#f90000" }}
+                style={{ backgroundColor: "#fdf9c4" }}
                 className="colorChart"
               ></div>
               <CardText className="fs-3">
@@ -138,7 +138,7 @@ const Nutrientes = () => {
 
             <li className="mb-1 d-flex align-items-center gap-1">
               <div
-                style={{ backgroundColor: "#ffe600" }}
+                style={{ backgroundColor: "#ffda9e" }}
                 className="colorChart"
               ></div>
               <CardText className="fs-3">
@@ -151,7 +151,7 @@ const Nutrientes = () => {
 
             <li className="mb-1 d-flex align-items-center gap-1">
               <div
-                style={{ backgroundColor: "#009ef9" }}
+                style={{ backgroundColor: "#c5c6c8" }}
                 className="colorChart"
               ></div>
               <CardText className="fs-3">
@@ -164,7 +164,7 @@ const Nutrientes = () => {
 
             <li className="mb-1 d-flex align-items-center gap-1">
               <div
-                style={{ backgroundColor: "#0400f9" }}
+                style={{ backgroundColor: "#b2e2f2" }}
                 className="colorChart"
               ></div>
               <CardText className="fs-3">
