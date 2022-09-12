@@ -95,7 +95,7 @@ const TableCompany = () => {
         </tr>
         {data.map((dato, index) => (
           <>
-            <tr key={index}>
+            <tr key={index || dato.id}>
               {/* NOMBRE */}
               <td>
                 <div className="d-flex aling-items-center">
