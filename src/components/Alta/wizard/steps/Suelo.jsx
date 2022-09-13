@@ -363,8 +363,15 @@ const Suelo = ({ stepper }) => {
           <Form>
             <Row>
               <Col md="6" sm="12" className="mb-1">
-                <Label className="form-label" for="compactionLevel">
-                  Nivel de compactación
+                <Label
+                  className="form-label d-flex align-items-center justify-content-between"
+                  for="compactionLevel"
+                >
+                  Nivel de compactación{" "}
+                  <FiHelpCircle
+                    id="compactionLevelToolTip"
+                    className="fs-5 me-1"
+                  />
                 </Label>
                 <Input
                   type="select"
@@ -388,11 +395,39 @@ const Suelo = ({ stepper }) => {
                     {formErrors.compactionLevel}
                   </em>
                 )}
+
+                <UncontrolledTooltip
+                  placement="right"
+                  target="compactionLevelToolTip"
+                >
+                  <span className="fw-bolder">Nivel de compactación </span> Por
+                  defecto el sistema seleccionará “compacto” ya que es la
+                  situación mas común en lotes agrícolas.
+                  <br />
+                  <span className="fw-bolder">Mullido</span>: {`<`} 0.5 Mpa (Ej:
+                  suelo movido por una rastra)
+                  <br />
+                  <span className="fw-bolder">Normal</span>: 0.5 - 1.5 Mpa (Ej:
+                  suelo inalterado, virgen)
+                  <br />
+                  <span className="fw-bolder">Compacto</span>: 1.5-2.5 Mpa (Ej:
+                  lotes agrícolas)
+                  <br />
+                  <span className="fw-bolder">Muy Compacto</span>: {`>`} 2.5 Mpa
+                  Ej: lotes agrícolas)
+                </UncontrolledTooltip>
               </Col>
 
               <Col md="6" sm="12" className="mb-1">
-                <Label className="form-label" for="limitationForWaterlogging">
-                  Limitación por anegamiento
+                <Label
+                  className="form-label d-flex align-items-center justify-content-between"
+                  for="limitationForWaterlogging"
+                >
+                  Limitación por anegamiento{" "}
+                  <FiHelpCircle
+                    id="limitationForWaterloggingToolTip"
+                    className="fs-5 me-1"
+                  />
                 </Label>
                 <Input
                   type="select"
@@ -423,6 +458,16 @@ const Suelo = ({ stepper }) => {
                     {formErrors.limitationForWaterlogging}
                   </em>
                 )}
+
+                <UncontrolledTooltip
+                  placement="right"
+                  target="limitationForWaterloggingToolTip"
+                >
+                  <span className="fw-bolder">Limitación por anegamiento </span>{" "}
+                  Es la profundidad donde se concentra el mayor % de raíces que
+                  absorbe los nutrientes del suelo, puede oscilar entre 10-35 cm
+                  de espesor o profundidad
+                </UncontrolledTooltip>
               </Col>
 
               <Col md="6" sm="12" className="mb-1">
@@ -451,7 +496,15 @@ const Suelo = ({ stepper }) => {
             </Row>
 
             <CardSubtitle className="fs-4 fw-bold my-2">
-              Análisis de suelo
+              Análisis de suelo{" "}
+              <FiHelpCircle id="analisisDeSueloToolTip" className="fs-5 ms-1" />
+              <UncontrolledTooltip
+                placement="right"
+                target="analisisDeSueloToolTip"
+              >
+                Si no posee un análisis de suelo completo, el sistema brinda por
+                defecto valores NO limitantes.
+              </UncontrolledTooltip>
             </CardSubtitle>
 
             <Accordion open={open} toggle={toggle}>
