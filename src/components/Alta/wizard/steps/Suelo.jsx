@@ -26,6 +26,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  List,
   UncontrolledAlert,
   Alert,
   Toast,
@@ -737,9 +738,32 @@ const Suelo = ({ stepper }) => {
 
                       <UncontrolledTooltip placement="right" target="nTotal">
                         <span className="fw-bolder">Nitrógeno total</span>{" "}
-                        Método de Kjeldahl. Ingresar gr, % o ppm <br />
-                        <span className="fw-bolder">Unidades</span>: %, mg/kg o
-                        ppm (tengo que corroborar con Miguel)
+                        Nitrógeno total, Método de Kjeldahl. Unidades: %, mg/kg
+                        o ppm
+                        <br />
+                        <span className="fw-bolder">
+                          Cálculo del N total a partir de la M.O
+                        </span>
+                        : En general la relación C/N en superficie varía entre
+                        10 y 14.
+                        <br />
+                        <List>
+                          <li>10 en suelos agotados</li>
+                          <li>14 en suelos vírgenes</li>
+                        </List>
+                        <br />
+                        Tomar 12 para suelos con MO orgánica alta (+ de 2.8%) y
+                        10
+                        <br />
+                        para suelos con M.O menor a 2.3%.
+                        <br />
+                        Cálculo: MO= 1.724 * C
+                        <br />
+                        <span className="fw-bolder">C= MO (dato) / 1.724</span>:
+                        <br />
+                        A ese valor de C lo divido por 12 o 10 y nos da el Nt.
+                        <br />
+                        Ntotal varía entre 0.1 y 0.2% (usualmente 0.13 a 0.17)
                       </UncontrolledTooltip>
 
                       {/* CE */}
@@ -866,8 +890,7 @@ const Suelo = ({ stepper }) => {
 
                       <UncontrolledTooltip placement="right" target="N-NO3">
                         <span className="fw-bolder">N-NO3</span> N de Nitratos a
-                        la siembra expresado en ppm <br />
-                        <span className="fw-bolder">Unidades</span>: mg/kg o ppm
+                        la siembra expresado en ppm
                       </UncontrolledTooltip>
 
                       {/* Fmin */}
