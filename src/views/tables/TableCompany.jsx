@@ -35,7 +35,8 @@ import {
 import { Link } from "react-router-dom";
 
 // ** import icon ToolBox
-import toolBox from "@src/assets/images/icons/toolbox.svg";
+import location from "@src/assets/images/icons/location.svg";
+import addLocation from "@src/assets/images/icons/addLocation.svg";
 import { DataContext } from "../../utility/context/LoteProvider";
 
 const TableCompany = () => {
@@ -50,14 +51,15 @@ const TableCompany = () => {
     setIdLoteDelete,
     deleteLoteModal,
     setDeleteLoteModal,
+    avatares,
   } = useContext(DataContext);
 
   const [verModal, setVerModal] = useState(false);
 
   // ** tooltip
-  const [tooltipOpen, setTooltipOpen] = useState(false);
+  // const [tooltipOpen, setTooltipOpen] = useState(false);
 
-  const toggle = () => setTooltipOpen(!tooltipOpen);
+  // const toggle = () => setTooltipOpen(!tooltipOpen);
 
   const medidaDesktop = document.documentElement.clientWidth;
 
@@ -67,7 +69,13 @@ const TableCompany = () => {
         <tr>
           <td>
             <div className="d-flex aling-items-center pb-1 pt-1">
-              <img className="me-75" src={toolBox} alt="name" />
+              <img
+                className="me-75 color-redLocation"
+                src={addLocation}
+                alt="name"
+                width={25}
+                height={25}
+              />
               <div className="d-flex flex-column">
                 <Link
                   to="/new-lote"
@@ -99,7 +107,13 @@ const TableCompany = () => {
               {/* NOMBRE */}
               <td>
                 <div className="d-flex aling-items-center">
-                  <img className="me-75" src={toolBox} alt={dato.name} />
+                  <img
+                    className="me-75 color-redLocation"
+                    src={location}
+                    alt={dato.name}
+                    width={25}
+                    height={25}
+                  />
                   <div className="d-flex flex-column">
                     <Link
                       to={"/new-lote"}
@@ -263,6 +277,10 @@ const TableCompany = () => {
 
   return (
     <>
+      {!localStorage.getItem("Avatar")
+        ? localStorage.setItem("Avatar", avatares.PJ2)
+        : null}
+
       <CardHeader className="d-flex align-items-center justify-content-between">
         <CardTitle>Mis Lotes</CardTitle>
 

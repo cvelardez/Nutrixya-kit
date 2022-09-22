@@ -23,6 +23,10 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
   color: #28c76f;
 }
 
+.color-redLocation {
+  color: #bd0003;
+}
+
 .color-logo {
   color: #28c76f;
 }
@@ -165,4 +169,98 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
   width: 10px;
   height: 10px;
   border-radius: 100%;
+}
+
+// ===================================================================================
+
+.boxImage {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
+    url(../images/banner.png);
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+
+  border-radius: 20px 20px 0 0;
+}
+
+.containerTextBanner {
+  position: absolute;
+
+  bottom: -30px;
+  left: 80px;
+}
+
+.nameBanner {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+
+.correoBanner {
+  color: #b4b4b4;
+  padding: 0;
+  margin: 0;
+}
+
+.bottonBanner {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+
+.cardLoteInfo-white {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  // background-color: #f4f4f4;
+  padding: 30px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardLoteInfo-dark {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  // background-color: #202536;
+  padding: 30px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sizeIconLote {
+  width: 40px;
+  height: 40px;
+}
+
+.mtt {
+  padding: 10px 0 0 0;
+}
+
+.imgStyle {
+  outline: 5px solid #fff;
+  box-shadow: 1px 5px 20px #00000020;
+}
+
+.scalee {
+  transition: all 200ms ease-in-out;
+}
+
+.scalee:hover {
+  transform: scale(1.1);
 }

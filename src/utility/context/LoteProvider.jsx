@@ -4,7 +4,23 @@ import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
+import PJ1 from "@src/assets/images/avatar/PJ-1.png";
+import PJ2 from "@src/assets/images/avatar/PJ-2.png";
+import PJ3 from "@src/assets/images/avatar/PJ-3.png";
+import PJ4 from "@src/assets/images/avatar/PJ-4.png";
+import PJ5 from "@src/assets/images/avatar/PJ-5.png";
+import PJ6 from "@src/assets/images/avatar/PJ-6.png";
+
 export const DataContext = createContext();
+
+const avatares = {
+  PJ1: PJ1,
+  PJ2: PJ2,
+  PJ3: PJ3,
+  PJ4: PJ4,
+  PJ5: PJ5,
+  PJ6: PJ6,
+};
 
 const DataLoteYManejo = [
   {
@@ -32,9 +48,8 @@ export default function LoteProvider({ children }) {
   // ** import navigate from "react-router-dom"
   const navigate = useNavigate();
 
-  // ** State Cultivo
-  // const [dateCultivo, setDateCultivo] = useState("");
-  // const [cropCultivo, setCropCultivo] = useState("Maíz grano");
+  // ** state theme color pages
+  const [colorScheme, setColorScheme] = useState(false);
 
   // ** State Otro Arrancador
   const [contenidoNitrogeno, setContenidoNitrogeno] = useState("");
@@ -48,6 +63,7 @@ export default function LoteProvider({ children }) {
   const [eficienciasAzufre, setEficienciasAzufre] = useState("");
 
   // ** State setting acount profile
+  const [editProfileAcount, setEditProfileAcount] = useState(false);
   const [nombreUsuario, setNombreUsuario] = useState("Martín-Nutrixya");
 
   // ** State modal Account
@@ -383,6 +399,11 @@ export default function LoteProvider({ children }) {
 
           nombreUsuario,
           setNombreUsuario,
+          colorScheme,
+          setColorScheme,
+          editProfileAcount,
+          setEditProfileAcount,
+          avatares,
         }}
       >
         {children}

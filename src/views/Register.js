@@ -328,11 +328,9 @@ const Register = () => {
                     }
                   >
                     <option value={""}>- Selecciona una -</option>
-                    <option value={"Corteva"}>Corteva</option>
-                    <option value={"GDM"}>GDM</option>
-                    <option value={"A través de Nutrixya"}>
-                      A través de Nutrixya
-                    </option>
+                    <option value={"Facebook"}>Facebook</option>
+                    <option value={"Instragram"}>Instragram</option>
+                    <option value={"Linkedin"}>Linkedin</option>
                     <option value={"Otro"}>Otro</option>
                   </Input>
                   {formErrors.options && (
@@ -387,31 +385,6 @@ const Register = () => {
               >
                 Iniciar Sesión
               </Button>
-
-              {/* <p className='text-center mt-2'>
-              <span className='me-25'>¿Ya tienes una cuenta?</span>
-              <Link to='/login'>
-                <span>Si el usuario ya está registrado, puede iniciar sesión desde este botón</span>
-              </Link>
-            </p> */}
-
-              {/* <div className='divider my-2'>
-              <div className='divider-text'>or</div>
-            </div>
-            <div className='auth-footer-btn d-flex justify-content-center'>
-              <Button color='facebook'>
-                <Facebook size={14} />
-              </Button>
-              <Button color='twitter'>
-                <Twitter size={14} />
-              </Button>
-              <Button color='google'>
-                <Mail size={14} />
-              </Button>
-              <Button className='me-0' color='github'>
-                <GitHub size={14} />
-              </Button>
-            </div> */}
             </Col>
           </Col>
         </Row>
