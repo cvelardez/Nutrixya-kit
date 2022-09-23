@@ -1,5 +1,5 @@
 // ** React Imports
-import { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 
 // ** Icon nav links
 import { Mail, Home } from "react-feather";
@@ -20,6 +20,8 @@ import { Link } from "react-router-dom";
 
 // ** import Logo Nutrixya
 import Logo from "../../../../assets/images/logo/logoNutrixya.svg";
+
+import { DataContext } from "../../../../utility/context/LoteProvider";
 
 const ThemeNavbar = (props) => {
   // ** Props
@@ -146,6 +148,8 @@ const ThemeNavbar = (props) => {
   //   }
   // }
 
+  const { colorScheme, setColorScheme } = useContext(DataContext);
+
   return (
     <Fragment>
       <div className="bookmark-wrapper d-flex align-items-center">
@@ -173,7 +177,10 @@ const ThemeNavbar = (props) => {
       </div>
       <NavbarUser skin={skin} setSkin={setSkin} />
 
-      <NavItem className="d-none d-lg-block">
+      <NavItem
+        className="d-none d-lg-block"
+        onClick={() => setColorScheme(!colorScheme)}
+      >
         <NavLink className="nav-link-style">
           <ThemeToggler />
         </NavLink>

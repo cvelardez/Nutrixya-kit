@@ -37,7 +37,7 @@ import defaultAvatar from "@src/assets/images/portrait/small/avatar-s-11.jpg";
 import { DataContext } from "../../../../utility/context/LoteProvider";
 
 const UserDropdown = () => {
-  const { nombreUsuario } = useContext(DataContext);
+  const { nombreUsuario, avatares } = useContext(DataContext);
 
   // ** State modal Account
   const [centeredModal, setCenteredModal] = useState(false);
@@ -60,7 +60,11 @@ const UserDropdown = () => {
         className="d-flex align-items-center justify-content-center"
       >
         <Avatar
-          img={defaultAvatar}
+          img={
+            localStorage.getItem("Avatar")
+              ? localStorage.getItem("Avatar")
+              : avatares.PJ2
+          }
           imgHeight="40"
           imgWidth="40"
           status="online"
