@@ -710,13 +710,12 @@ const Suelo = ({ stepper }) => {
                         <span className="fw-bolder">Unidad</span>: gr/cm3
                       </UncontrolledTooltip>
 
-                      {/* N total */}
+                      {/* M.O */}
                       <Label
                         className="mt-1 d-flex align-items-center justify-content-between"
                         htmlFor="totalN"
                       >
-                        N total{" "}
-                        <FiHelpCircle id="nTotal" className="fs-5 me-1" />
+                        M.O <FiHelpCircle id="nTotal" className="fs-5 me-1" />
                       </Label>
                       <Input
                         type="number"
@@ -1253,7 +1252,7 @@ const Suelo = ({ stepper }) => {
                             className="mt-1 d-flex align-items-center justify-content-between"
                             htmlFor="totalNStratumTwo"
                           >
-                            N total{" "}
+                            M.O{" "}
                             <FiHelpCircle id="nTotal" className="fs-5 me-1" />
                           </Label>
                           <Input
@@ -1793,8 +1792,7 @@ const Suelo = ({ stepper }) => {
                           className="mt-1 d-flex align-items-center justify-content-between"
                           htmlFor="totalNStratumThree"
                         >
-                          N total{" "}
-                          <FiHelpCircle id="nTotal" className="fs-5 me-1" />
+                          M.O <FiHelpCircle id="nTotal" className="fs-5 me-1" />
                         </Label>
                         <Input
                           type="number"

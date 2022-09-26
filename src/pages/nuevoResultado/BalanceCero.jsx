@@ -1,13 +1,26 @@
 import React from "react";
-import { CardSubtitle, CardText, List } from "reactstrap";
+import { CardSubtitle, CardText, List, UncontrolledTooltip } from "reactstrap";
+
+import { FiHelpCircle } from "react-icons/fi";
 
 const BalanceCero = () => {
   return (
     <>
-      <h1 className="mb-3">Balance Cero</h1>
-      <div className="w-100  d-flex align-items-center justify-content-center">
-        <h2 className="fs-2 fw-bolder text-primary mt-2">En construcción</h2>
+      <div className="d-flex align-items-center gap-1 mb-4">
+        <CardText className="fs-3 fw-bold m-0 p-0">Balance Cero</CardText>{" "}
+        <FiHelpCircle id="balanceCeroo" className="fs-2" />
+        <UncontrolledTooltip placement="right" target="balanceCeroo">
+          <span className="fw-bolder">Balance Cero</span> Medida
+          desustentabilidad, queinforma cuántos kilos de
+          fertilizantesedeberíaaportar al suelo para devolver loextraído por el
+          cultivo, evitando la degradación del mismo.
+        </UncontrolledTooltip>
       </div>
+
+      {/* <div className="w-100  d-flex align-items-center justify-content-center">
+        <h2 className="fs-2 fw-bolder text-primary mt-2">En construcción</h2>
+      </div> */}
+
       {/* <CardSubtitle className="fs-2 mb-3 fw-bold">
         Dosis mínima para evitar el agotamiento del suelo.
       </CardSubtitle>

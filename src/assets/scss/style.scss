@@ -171,6 +171,25 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
   border-radius: 100%;
 }
 
+.arrowChart {
+  font-size: 100px;
+  font-weight: bolder;
+  padding: 0 0 0 20px;
+  animation: arrowChart linear 2s infinite;
+}
+
+@keyframes arrowChart {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
 // ===================================================================================
 
 .boxImage {
