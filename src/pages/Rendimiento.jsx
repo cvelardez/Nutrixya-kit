@@ -23,6 +23,8 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
+import { MdKeyboardArrowDown } from "react-icons/md";
+
 import { DataContext } from "../utility/context/LoteProvider";
 
 // ** import wizard
@@ -51,11 +53,21 @@ const Rendimiento = () => {
     </Col> */}
 
       <Card>
-        <CardHeader>
+        <CardHeader className="d-flex flex-column align-items-start justify-content-start gap-5">
           <CardTitle className="fs-2 fw-bolder mb-1">
             Recomendación nutricional:
             {/* {JSON.stringify(verRecomendacion, null, 2)} */}
           </CardTitle>
+          <div className="w-100 d-flex align-items-center justify-content-center">
+            <div className="text-center">
+              <CardText className="fs-3 fw-bolder text-primary">
+                Rendimiento objetivo: 9000kg/ha
+              </CardText>
+              <CardText className="fs-3 fw-bolder text-primary">
+                Rendimiento sin fertilizar: 6240kg/ha
+              </CardText>
+            </div>
+          </div>
         </CardHeader>
         <CardBody>
           <div className="d-flex align-items-center justify-content-between flex-column flex-sm-column flex-md-row p-sm-2 p-md-5">
@@ -208,6 +220,10 @@ const Rendimiento = () => {
                 <Input type="date" value={verRecomendacion.date} />
               </div>
             </div>
+          </div>
+
+          <div className="w-100 d-flex align-items-center justify-content-center">
+            <MdKeyboardArrowDown className="arrowChart text-primary" />
           </div>
         </CardBody>
       </Card>

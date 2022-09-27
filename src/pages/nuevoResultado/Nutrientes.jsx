@@ -1,5 +1,5 @@
 import React from "react";
-import { CardText, Col, List, Row } from "reactstrap";
+import { CardText, Col, List, Row, UncontrolledTooltip } from "reactstrap";
 
 import {
   Chart as ChartJS,
@@ -10,6 +10,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+
+import { FiHelpCircle } from "react-icons/fi";
+
 import { Bar } from "react-chartjs-2";
 // import faker from "faker";
 
@@ -24,43 +27,37 @@ ChartJS.register(
 
 const Nutrientes = () => {
   const colorChart = {
-    color1: "#ff6961",
-    color2: "#77dd77",
-    color3: "#fdfd96",
-    color4: "#84b6f4",
-    color5: "#f15fff",
-    color6: "#a68069",
+    // color1: "#ff6961",
+    color1: "#77dd77",
+    color2: "#fdfd96",
+    color3: "#84b6f4",
+    color4: "#f15fff",
+    color5: "#a68069",
     colorOpacity: {
-      color1: "#ff696150",
-      color2: "#77dd7750",
-      color3: "#fdfd9650",
-      color4: "#84b6f450",
-      color5: "#f15fff50",
-      color6: "#a6806950",
+      // color1: "#ff696150",
+      color1: "#77dd7750",
+      color2: "#fdfd9650",
+      color3: "#84b6f450",
+      color4: "#f15fff50",
+      color5: "#a6806950",
     },
   };
 
   const dataValueNumberNutrientes = {
     dataTitle: 6240,
-    data1: 9000,
-    data2: 6940,
-    data3: 6240,
+    // data1: 9000,
+    data1: 6940,
+    data2: 6240,
+    data3: 9000,
     data4: 9000,
-    data5: 9000,
   };
 
   const data = {
-    // labels: [
-    //   "Rendimiento objetivo",
-    //   "Rendimiento sin aplicar N",
-    //   "Rendimiento sin aplicar P",
-    //   "Rendimiento sin aplicar K",
-    //   "Rendimiento sin aplicar S",
-    // ],
-    labels: ["", "", "", "", ""],
+    labels: ["Rendimiento objetivo", "N", "P", "K", "S"],
+    labels: ["N", "P", "K", "S"],
     datasets: [
       {
-        label: "Rendimientos",
+        label: "",
         backgroundColor: [
           colorChart.color1,
           colorChart.color2,
@@ -112,28 +109,63 @@ const Nutrientes = () => {
 
   return (
     <>
-      <h1 className="mb-5">Rendimiento vs Nutrientes</h1>
+      <div className="d-flex align-items-center gap-1 mb-4">
+        <CardText className="fs-1 fw-bold m-0 p-0">
+          Rendimiento vs Nutrientes
+        </CardText>{" "}
+        <FiHelpCircle id="rendimientoVsNutrientes" className="fs-2" />
+        <UncontrolledTooltip placement="right" target="rendimientoVsNutrientes">
+          <span className="fw-bolder">Rendimiento vs Nutrientes</span> Gráfico
+          que muestra cuáles son los nutrientes quelimitan el rendimiento
+          objetivo, "ley del mínimo".
+        </UncontrolledTooltip>
+      </div>
 
-      <CardText className="fs-3 mb-2">
-        Rendimiento sin fertilizar:{" "}
-        <span className="fw-bolder">
-          {dataValueNumberNutrientes.dataTitle}kg/ha
-        </span>
-      </CardText>
+      <div className="d-flex align-items-start flex-column justify-content-start mb-4 gap-1">
+        <CardText className="fs-3 m-0 p-0">
+          Rendimiento sin fertilizar:{" "}
+          <span className="fw-bolder">
+            {dataValueNumberNutrientes.dataTitle}kg/ha
+          </span>
+        </CardText>
+
+        <CardText className="fs-3 m-0 p-0">
+          Rendimiento con arrancador o abono orgánico:{" "}
+          <span className="fw-bolder">.......kg/ha</span>
+        </CardText>
+      </div>
+
       <Row>
+        <Col sm="12" md="6">
+          <CardText>Rendimiento(kg/ha)</CardText>
+        </Col>
+
+        <Col sm="12" md="6">
+          <CardText className="text-primary">
+            Rendimiento objetivo: 9000kg/ha
+          </CardText>
+        </Col>
+
         <Col sm="12" md="6" className="p-1">
           <Bar data={data} options={options} />
         </Col>
 
         <Col sm="12" md="6" className="py-5">
+          {/* <CardText className="fs-3">
+            Rendimiento objetivo:{" "}
+            <span className="fw-bolder">
+              {dataValueNumberNutrientes.data1} kg/ha
+            </span>
+          </CardText> */}
+
           <List type="unstyled">
             <li className="mb-1 d-flex align-items-center gap-1">
               <div
                 style={{ backgroundColor: `${colorChart.color1}` }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-3">
-                Rendimiento objetivo:{" "}
+              <CardText className="fs-4">
+                Rendimiento sin fertilizar con N:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data1} kg/ha
                 </span>
@@ -145,8 +177,8 @@ const Nutrientes = () => {
                 style={{ backgroundColor: `${colorChart.color2}` }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-3">
-                Rendimiento sin aplicar N:{" "}
+              <CardText className="fs-4">
+                Rendimiento sin fertilizar con P:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data2} kg/ha
                 </span>
@@ -158,8 +190,8 @@ const Nutrientes = () => {
                 style={{ backgroundColor: `${colorChart.color3}` }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-3">
-                Rendimiento sin aplicar P:{" "}
+              <CardText className="fs-4">
+                Rendimiento sin fertilizar con K:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data3} kg/ha
                 </span>
@@ -171,27 +203,26 @@ const Nutrientes = () => {
                 style={{ backgroundColor: `${colorChart.color4}` }}
                 className="colorChart"
               ></div>
-              <CardText className="fs-3">
-                Rendimiento sin aplicar K:{" "}
+              <CardText className="fs-4">
+                Rendimiento sin fertilizar con S:{" "}
                 <span className="fw-bolder">
                   {dataValueNumberNutrientes.data4} kg/ha
                 </span>
               </CardText>
             </li>
-
-            <li className="mb-1 d-flex align-items-center gap-1">
-              <div
-                style={{ backgroundColor: `${colorChart.color5}` }}
-                className="colorChart"
-              ></div>
-              <CardText className="fs-3">
-                Rendimiento sin aplicar S:{" "}
-                <span className="fw-bolder">
-                  {dataValueNumberNutrientes.data5} kg/ha
-                </span>
-              </CardText>
-            </li>
           </List>
+        </Col>
+
+        <Col
+          sm="12"
+          md="6"
+          className="d-flex align-items-center justify-content-end"
+        >
+          <CardText>Nutrientes</CardText>
+        </Col>
+
+        <Col sm="12" md="6">
+          <CardText> </CardText>
         </Col>
       </Row>
     </>
