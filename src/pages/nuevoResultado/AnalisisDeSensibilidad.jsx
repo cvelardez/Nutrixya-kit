@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Row, Col, CardText, UncontrolledTooltip } from "reactstrap";
+import { Row, Col, CardText, UncontrolledTooltip, Button } from "reactstrap";
 
 import {
   Chart as ChartJS,
@@ -29,6 +29,8 @@ ChartJS.register(
 );
 
 const AnalisisDeSensibilidad = () => {
+  const [valueDefault, setValueDefault] = useState([0, 5, 10, 20, 30, 40, 50]);
+
   const colorChart = {
     color1: "#ff6961",
     color2: "#77dd77",
@@ -53,13 +55,14 @@ const AnalisisDeSensibilidad = () => {
   };
 
   const scoresOne = [0, 20, 40, 30, 10, 1, 0];
-  const scoresTwo = [0, 5, 10, 20, 30, 40, 50];
+  // const scoresTwo = [0, 5, 10, 20, 30, 40, 50];
+  const scoresTwo = valueDefault;
 
   const data = {
     labels: [100, 200, 300, 400, 500, 600, 700],
     datasets: [
       {
-        label: "Dataset 1",
+        label: "Utilidad",
         data: scoresOne,
         tension: 0.3,
         borderColor: colorChart.color1,
@@ -67,7 +70,7 @@ const AnalisisDeSensibilidad = () => {
       },
 
       {
-        label: "Dataset 2",
+        label: "Rentabilidad",
         data: scoresTwo,
         tension: 0.3,
         borderColor: colorChart.color5,
@@ -164,6 +167,27 @@ const AnalisisDeSensibilidad = () => {
               {dataValueNumberAnalisis.data3} kg/ha
             </span>
           </CardText>
+
+          <Button
+            color="primary"
+            onClick={() => setValueDefault([0, 5, 10, 20, 20, 30, 40])}
+          >
+            cambiar1
+          </Button>
+
+          <Button
+            color="primary"
+            onClick={() => setValueDefault([0, 5, 10, 50, 20, 30, 40])}
+          >
+            cambiar2
+          </Button>
+
+          <Button
+            color="primary"
+            onClick={() => setValueDefault([0, 5, 10, 20, 20, 80, 40])}
+          >
+            cambiar3
+          </Button>
         </Col>
 
         <Col sm="12" md="6">
